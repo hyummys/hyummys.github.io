@@ -468,6 +468,8 @@ section h2::after {
 /* Skill Category Icons */
 .programming h3::before { content: "💻"; }
 .mobile h3::before { content: "📱"; }
+.embedded h3::before { content: "⚡"; }
+.fintech h3::before { content: "💳"; }
 .tools h3::before { content: "🛠️"; }
 .design h3::before { content: "🎨"; }
 .ai h3::before { content: "🤖"; }
