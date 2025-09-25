@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:toss.im)"
+      "WebFetch(domain:toss.im)",
+      "Bash(npm run pdf:*)"
     ],
     "deny": [],
     "ask": []

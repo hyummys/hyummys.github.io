@@ -1,0 +1,23 @@
+{
+  "name": "james-portfolio-pdf-generator",
+  "version": "1.0.0",
+  "description": "PDF generator for James Portfolio - Fintech Android Developer",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "pdf": "node generate-pdf.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "puppeteer": "^21.5.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "pdf",
+    "portfolio",
+    "puppeteer",
+    "android-developer",
+    "fintech"
+  ],
+  "author": "James (hyummys)",
+  "license": "MIT"
+}
