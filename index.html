@@ -27,7 +27,9 @@
     <header>
         <div class="container">
             <div class="profile-container">
-                <div class="profile-img">👨‍💻</div>
+                <div class="profile-img">
+                    <img src="profile.png" alt="James Profile">
+                </div>
                 <div class="header-content">
                     <h1>서재현(James)</h1>
                     <p>Software Developer & Tech Enthusiast</p>
@@ -82,23 +84,43 @@
                         <h4>🎯 주요 프로젝트</h4>
                         
                         <div class="project">
-                            <h5>1. BGF리테일 CU Android 결제 단말기</h5>
-                            <p><strong>개요:</strong> CU 편의점 Android 기반 결제 단말기 애플리케이션 개발</p>
+                            <h5>1. 차세대 Android 결제 단말기 개발</h5>
+                            <p><strong>개요:</strong> Modern Android 기술 스택 기반 차세대 결제 단말기 플랫폼 구축</p>
+                            <p><strong>역할:</strong> 단독 기획/설계/개발 (메인 개발자)</p>
+                            <ul>
+                                <li><strong>Modern Tech Stack:</strong> Kotlin + Jetpack Compose, MVVM, Hilt, Coroutines/Flow 적용</li>
+                                <li><strong>코드 아키텍처:</strong> 자체 로직 기반 설계로 89.8% 코드 재사용률 달성 (제조사 리더기 모듈 제외)</li>
+                                <li><strong>DI & 의존성 관리:</strong> Hilt를 통한 모듈화된 의존성 주입 구조 설계</li>
+                                <li><strong>비동기 처리:</strong> Kotlin Coroutines/Flow 활용한 반응형 프로그래밍 및 성능 최적화</li>
+                                <li><strong>Reactive UI:</strong> Jetpack Compose 기반 선언형 UI로 직관적인 사용자 경험 제공</li>
+                                <li><strong>네트워크:</strong> Retrofit + OkHttp 기반 안정적인 통신 레이어 구현</li>
+                                <li><strong>로컬 DB:</strong> Room Database를 활용한 거래 데이터 영속성 관리</li>
+                                <li><strong>보안:</strong> Android Keystore, 암호화 통신, PCI DSS 준수</li>
+                                <li><strong>테스트:</strong> JUnit, Mockk 기반 유닛 테스트 및 UI 테스트 자동화</li>
+                            </ul>
+                            <p><strong>성과:</strong> Modern Android 개발 패턴 적용으로 유지보수성 및 확장성 극대화, 차세대 플랫폼 기반 구축</p>
+                        </div>
+
+                        <div class="project">
+                            <h5>2. BGF리테일 CU Android 결제 단말기</h5>
+                            <p><strong>개요:</strong> CU 편의점 전국 체인 Android 기반 결제 단말기 애플리케이션 개발</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, CS)</p>
                             <ul>
                                 <li>Kotlin + Jetpack Compose를 활용한 Modern Native Android 앱 개발</li>
                                 <li>MVVM 아키텍처 패턴 적용으로 확장 가능한 코드 구조 설계</li>
                                 <li>Kotlin Coroutines를 통한 비동기 처리 및 성능 최적화</li>
+                                <li><strong>성능 최적화:</strong> 프로세스 사용 최적화 및 CPU 최적화 직접 수행</li>
+                                <li><strong>하드웨어 가속:</strong> HW 가속 활용으로 발열 문제 해결 및 앱 응답 속도 30% 개선</li>
+                                <li><strong>광고 시스템:</strong> ExoPlayer 기반 미디어 재생 시스템 설계 및 개발</li>
                                 <li>결제 프로토콜 및 보안 통신 구현 (네트워크 통신, 앱 보안)</li>
                                 <li>실시간 거래 처리 및 오류 복구 메커니즘 구현</li>
                                 <li>사용자 중심의 직관적인 UI/UX 설계 (Android Design Guidelines 준수)</li>
-                                <li>상용 서비스 품질 관리 및 안정성 확보</li>
                             </ul>
-                            <p><strong>성과:</strong> 현재 CU 편의점에서 상용화 운영 중, 단말 당 매일 수천 건의 결제 처리</p>
+                            <p><strong>성과:</strong> 현재 CU 편의점 전국 상용화 운영 중, 단말 당 매일 수천 건의 결제 처리</p>
                         </div>
                         
                         <div class="project">
-                            <h5>2. Master/VISA Card RF LV2 컨택리스 인증</h5>
+                            <h5>3. Master/VISA Card RF LV2 컨택리스 인증</h5>
                             <p><strong>개요:</strong> 글로벌 카드 브랜드사 공식 컨택리스 결제 인증 획득 프로젝트</p>
                             <p><strong>역할:</strong> 인증 시스템 개발 및 검증 도구 구현</p>
                             <ul>
@@ -111,9 +133,9 @@
                             </ul>
                             <p><strong>성과:</strong> Mastercard 및 VISA 공식 LV2 인증 획득, 글로벌 핀테크 표준 준수 확인</p>
                         </div>
-                        
+
                         <div class="project">
-                            <h5>3. Linux 기반 통합 서명패드</h5>
+                            <h5>4. Linux 기반 통합 서명패드</h5>
                             <p><strong>개요:</strong> 다중 VAN사 통신 스펙을 지원하는 All-in-One 통합 서명패드 최초 개발</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, 검증)</p>
                             <ul>
@@ -127,9 +149,9 @@
                             </ul>
                             <p><strong>성과:</strong> 회사 최초 통합 서명패드 상용화, 다중 VAN사 지원으로 시장 확대</p>
                         </div>
-                        
+
                         <div class="project">
-                            <h5>4. Linux 기반 API 결제 단말기 플랫폼</h5>
+                            <h5>5. Linux 기반 API 결제 단말기 플랫폼</h5>
                             <p><strong>개요:</strong> 단일 소스 기반 멀티 기종 지원 결제 단말기 플랫폼 개발</p>
                             <p><strong>역할:</strong> 무선/유선 단말기 개발 및 유지보수, 법인 전용 버전 12개 단독 개발</p>
                             <ul>
@@ -143,9 +165,9 @@
                             </ul>
                             <p><strong>성과:</strong> NICE 메인 단말기 플랫폼으로 채택, 개발 효율성 300% 향상</p>
                         </div>
-                        
+
                         <div class="project">
-                            <h5>5. 주유소 전용 무선 결제 단말기 (E1, GS칼텍스)</h5>
+                            <h5>6. 주유소 전용 무선 결제 단말기 (E1, GS칼텍스)</h5>
                             <p><strong>개요:</strong> 주유소 특화 다단계 트랜잭션 지원 무선 결제 시스템</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, 현장 테스트)</p>
                             <ul>
@@ -250,6 +272,14 @@
                             <span class="skill-tag">KMP</span>
                             <span class="skill-tag">MVVM</span>
                             <span class="skill-tag">Kotlin Coroutines</span>
+                            <span class="skill-tag">Kotlin Flow</span>
+                            <span class="skill-tag">Hilt</span>
+                            <span class="skill-tag">Retrofit</span>
+                            <span class="skill-tag">OkHttp</span>
+                            <span class="skill-tag">Room Database</span>
+                            <span class="skill-tag">ExoPlayer</span>
+                            <span class="skill-tag">JUnit</span>
+                            <span class="skill-tag">Mockk</span>
                             <span class="skill-tag">Django</span>
                             <span class="skill-tag">Flask</span>
                             <span class="skill-tag">PyQt5</span>
@@ -327,7 +357,7 @@
                     </div>
                     <div class="contact-item">
                         <h3>📱 Phone</h3>
-                        <p><a href="tel:+8110988\u200d85478">+81-10-9888-5478</a></p>
+                        <p><a href="tel:+8210988\u200d85478">+82-10-9888-5478</a></p>
                     </div>
                     <div class="contact-item">
                         <h3>💼 LinkedIn</h3>
