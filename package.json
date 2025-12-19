@@ -5,7 +5,9 @@
   "main": "generate-pdf.js",
   "scripts": {
     "pdf": "node generate-pdf.js",
-    "install-deps": "npm install"
+    "install-deps": "npm install",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
   },
   "dependencies": {
     "puppeteer": "^21.5.0"

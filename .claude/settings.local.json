@@ -5,6 +5,8 @@
       "Bash(npm run pdf:*)",
       "Bash(start index.html)",
       "Bash(dir:*)"
+      "Bash(node:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

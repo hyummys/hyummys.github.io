@@ -61,8 +61,8 @@ class PortfolioApp {
             observer.observe(section);
         });
 
-        // Observe skill tags and experience items for individual animations
-        document.querySelectorAll('.skill-tag, .experience-item, .contact-item').forEach((element, index) => {
+        // Observe skill tags, experience items, project cards and contact items for individual animations
+        document.querySelectorAll('.skill-tag, .experience-item, .contact-item, .project-card').forEach((element, index) => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = `opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.05}s, transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.05}s`;
@@ -72,7 +72,7 @@ class PortfolioApp {
 
     // Add stagger animation to child elements
     staggerChildAnimations(parent) {
-        const children = parent.querySelectorAll('.skill-tag, .experience-item, .contact-item');
+        const children = parent.querySelectorAll('.skill-tag, .experience-item, .contact-item, .project-card');
         children.forEach((child, index) => {
             setTimeout(() => {
                 child.style.opacity = '1';
@@ -179,9 +179,31 @@ class PortfolioApp {
             item.addEventListener('mouseenter', () => {
                 item.style.transform = 'translateY(-6px)';
             });
-            
+
             item.addEventListener('mouseleave', () => {
                 item.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Project card interactions
+        document.querySelectorAll('.project-card').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-8px)';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Tech tag interactions in projects
+        document.querySelectorAll('.tech-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', (e) => {
+                e.target.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+
+            tag.addEventListener('mouseleave', (e) => {
+                e.target.style.transform = 'translateY(0) scale(1)';
             });
         });
     }
