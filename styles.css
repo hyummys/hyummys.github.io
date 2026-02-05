@@ -409,10 +409,123 @@ section h2::after {
     .project {
         background: rgba(29, 29, 31, 0.5);
     }
-    
+
     .project:hover {
         background: rgba(29, 29, 31, 0.8);
     }
+
+    .project-key-results {
+        background: rgba(52, 199, 89, 0.08);
+    }
+}
+
+/* Project Tech Stack Tags */
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 16px 0;
+}
+
+.project-tech-stack .tech-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* Project Key Results */
+.project-key-results {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: rgba(52, 199, 89, 0.05);
+    border-left: 3px solid #34C759;
+    border-radius: 0 8px 8px 0;
+}
+
+.project-key-results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.project-key-results li {
+    padding: 4px 0 4px 22px;
+    position: relative;
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.project-key-results li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #34C759;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Project Details Toggle */
+.project-details-section {
+    margin-top: 16px;
+}
+
+.details-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.details-toggle:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(0, 122, 255, 0.03);
+}
+
+.details-toggle .toggle-arrow {
+    font-size: 9px;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.details-toggle[aria-expanded="true"] .toggle-arrow {
+    transform: rotate(90deg);
+}
+
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+                opacity 0.3s ease;
+}
+
+.details-content.open {
+    opacity: 1;
+}
+
+.details-content ul {
+    margin-top: 12px;
+    margin-left: 16px;
+    padding-bottom: 4px;
+}
+
+.details-content li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
 /* Skills Grid */
@@ -788,6 +901,188 @@ footer {
 .project-achievements strong {
     color: var(--text-primary);
     font-weight: 600;
+}
+
+/* 3D Device Showcase */
+.device-showcase {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 24px;
+}
+
+.device-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out;
+    cursor: grab;
+    will-change: transform;
+}
+
+.device-3d:active {
+    cursor: grabbing;
+}
+
+.device-image {
+    border-radius: 20px;
+    background: linear-gradient(145deg, #2d2d30, #1c1c1e);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.device-image svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.device-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255, 255, 255, 0.08) 44%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.08) 56%,
+        transparent 62%
+    );
+    background-size: 200% 200%;
+    background-position: -100% 0;
+    pointer-events: none;
+    transition: background-position 0.3s ease-out;
+}
+
+.device-3d:hover .device-shine {
+    background-position: 100% 0;
+}
+
+.device-3d .device-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    right: 10%;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
+    filter: blur(8px);
+    transition: all 0.15s ease-out;
+    z-index: -1;
+}
+
+/* Device type sizes */
+.device-android-terminal .device-image {
+    width: 160px;
+    height: 240px;
+}
+
+.device-cu-terminal .device-image {
+    width: 170px;
+    height: 250px;
+}
+
+.device-signpad .device-image {
+    width: 220px;
+    height: 160px;
+    border-radius: 14px;
+}
+
+.device-signpad .device-shine,
+.device-signpad .device-shadow {
+    border-radius: 14px;
+}
+
+.device-wireless .device-image {
+    width: 140px;
+    height: 220px;
+}
+
+/* Device hover state */
+.device-3d:hover {
+    box-shadow: none;
+}
+
+.device-3d:hover .device-image {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Device placeholder label */
+.device-label {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.device-3d:hover .device-label {
+    opacity: 1;
+}
+
+/* Responsive 3D devices */
+@media (max-width: 768px) {
+    .device-showcase {
+        margin: 16px 0 20px;
+    }
+
+    .device-android-terminal .device-image {
+        width: 120px;
+        height: 180px;
+    }
+
+    .device-cu-terminal .device-image {
+        width: 130px;
+        height: 190px;
+    }
+
+    .device-signpad .device-image {
+        width: 170px;
+        height: 120px;
+    }
+
+    .device-wireless .device-image {
+        width: 110px;
+        height: 170px;
+    }
+}
+
+@media (max-width: 480px) {
+    .device-android-terminal .device-image {
+        width: 100px;
+        height: 150px;
+    }
+
+    .device-cu-terminal .device-image {
+        width: 110px;
+        height: 160px;
+    }
+
+    .device-signpad .device-image {
+        width: 140px;
+        height: 100px;
+    }
+
+    .device-wireless .device-image {
+        width: 90px;
+        height: 140px;
+    }
 }
 
 /* Responsive Design for Projects */

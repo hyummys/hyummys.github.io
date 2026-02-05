@@ -86,101 +86,341 @@
                         
                         <div class="project">
                             <h5>1. 차세대 Android 결제 단말기 개발</h5>
+                            <div class="device-showcase">
+                                <div class="device-3d device-android-terminal">
+                                    <div class="device-image">
+                                        <svg viewBox="0 0 160 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="4" y="4" width="152" height="232" rx="18" fill="url(#at-body)" stroke="#444" stroke-width="1"/>
+                                            <rect x="12" y="28" width="136" height="180" rx="6" fill="#0a0f1a"/>
+                                            <rect x="12" y="28" width="136" height="180" rx="6" stroke="#007AFF" stroke-width="0.5" opacity="0.3"/>
+                                            <rect x="24" y="44" width="90" height="5" rx="2.5" fill="#007AFF" opacity="0.5"/>
+                                            <rect x="24" y="56" width="60" height="5" rx="2.5" fill="#5856D6" opacity="0.3"/>
+                                            <rect x="30" y="78" width="100" height="50" rx="10" fill="#007AFF" opacity="0.1" stroke="#007AFF" stroke-width="0.5" stroke-opacity="0.4"/>
+                                            <text x="80" y="108" text-anchor="middle" fill="#007AFF" font-size="14" font-family="system-ui" font-weight="600">₩ 15,000</text>
+                                            <rect x="40" y="145" width="80" height="30" rx="15" fill="#34C759" opacity="0.8"/>
+                                            <text x="80" y="165" text-anchor="middle" fill="white" font-size="11" font-family="system-ui" font-weight="500">승인완료</text>
+                                            <rect x="58" y="218" width="44" height="6" rx="3" fill="#38383A"/>
+                                            <circle cx="80" cy="16" r="3" fill="#38383A"/>
+                                            <defs>
+                                                <linearGradient id="at-body" x1="0" y1="0" x2="160" y2="240"><stop offset="0%" stop-color="#2d2d30"/><stop offset="100%" stop-color="#1c1c1e"/></linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="device-shine"></div>
+                                    <div class="device-shadow"></div>
+                                </div>
+                            </div>
                             <p><strong>개요:</strong> Modern Android 기술 스택 기반 차세대 결제 단말기 플랫폼 구축</p>
                             <p><strong>역할:</strong> 단독 기획/설계/개발 (메인 개발자)</p>
-                            <ul>
-                                <li><strong>Modern Tech Stack:</strong> Kotlin + Jetpack Compose, MVVM, Hilt, Coroutines/Flow 적용</li>
-                                <li><strong>코드 아키텍처:</strong> 자체 로직 기반 설계로 89.8% 코드 재사용률 달성 (제조사 리더기 모듈 제외)</li>
-                                <li><strong>DI & 의존성 관리:</strong> Hilt를 통한 모듈화된 의존성 주입 구조 설계</li>
-                                <li><strong>비동기 처리:</strong> Kotlin Coroutines/Flow 활용한 반응형 프로그래밍 및 성능 최적화</li>
-                                <li><strong>Reactive UI:</strong> Jetpack Compose 기반 선언형 UI로 직관적인 사용자 경험 제공</li>
-                                <li><strong>네트워크:</strong> Retrofit + OkHttp 기반 안정적인 통신 레이어 구현</li>
-                                <li><strong>로컬 DB:</strong> Room Database를 활용한 거래 데이터 영속성 관리</li>
-                                <li><strong>보안:</strong> Android Keystore, 암호화 통신, PCI DSS 준수</li>
-                                <li><strong>테스트:</strong> JUnit, Mockk 기반 유닛 테스트 및 UI 테스트 자동화</li>
-                            </ul>
-                            <p><strong>성과:</strong> Modern Android 개발 패턴 적용으로 유지보수성 및 확장성 극대화, 차세대 플랫폼 기반 구축</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">MVVM</span>
+                                <span class="tech-tag">Hilt</span>
+                                <span class="tech-tag">Coroutines/Flow</span>
+                                <span class="tech-tag">Retrofit</span>
+                                <span class="tech-tag">OkHttp</span>
+                                <span class="tech-tag">Room</span>
+                                <span class="tech-tag">Android Keystore</span>
+                                <span class="tech-tag">PCI DSS</span>
+                                <span class="tech-tag">JUnit</span>
+                                <span class="tech-tag">Mockk</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>자체 로직 기반 설계로 <strong>89.8% 코드 재사용률</strong> 달성 (제조사 리더기 모듈 제외)</li>
+                                    <li>Modern Android 개발 패턴 적용으로 유지보수성 및 확장성 극대화</li>
+                                    <li>차세대 플랫폼 기반 구축 완료</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>Hilt를 통한 모듈화된 의존성 주입 구조 설계</li>
+                                        <li>Kotlin Coroutines/Flow 활용한 반응형 프로그래밍 및 성능 최적화</li>
+                                        <li>Jetpack Compose 기반 선언형 UI로 직관적인 사용자 경험 제공</li>
+                                        <li>Retrofit + OkHttp 기반 안정적인 통신 레이어 구현</li>
+                                        <li>Room Database를 활용한 거래 데이터 영속성 관리</li>
+                                        <li>Android Keystore, 암호화 통신, PCI DSS 준수</li>
+                                        <li>JUnit, Mockk 기반 유닛 테스트 및 UI 테스트 자동화</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="project">
                             <h5>2. BGF리테일 CU Android 결제 단말기</h5>
+                            <div class="device-showcase">
+                                <div class="device-3d device-cu-terminal">
+                                    <div class="device-image">
+                                        <svg viewBox="0 0 170 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="4" y="4" width="162" height="242" rx="16" fill="url(#cu-body)" stroke="#444" stroke-width="1"/>
+                                            <rect x="12" y="20" width="146" height="150" rx="6" fill="#0a0f1a"/>
+                                            <rect x="12" y="20" width="146" height="150" rx="6" stroke="#007AFF" stroke-width="0.5" opacity="0.3"/>
+                                            <rect x="24" y="34" width="80" height="5" rx="2.5" fill="#FF9500" opacity="0.6"/>
+                                            <text x="24" y="56" fill="#FF9500" font-size="10" font-family="system-ui" font-weight="700" opacity="0.9">CU</text>
+                                            <text x="48" y="56" fill="white" font-size="9" font-family="system-ui" opacity="0.5">편의점 결제</text>
+                                            <rect x="24" y="70" width="122" height="40" rx="8" fill="#007AFF" opacity="0.1" stroke="#007AFF" stroke-width="0.5" stroke-opacity="0.3"/>
+                                            <text x="85" y="95" text-anchor="middle" fill="#007AFF" font-size="13" font-family="system-ui" font-weight="600">₩ 3,500</text>
+                                            <rect x="24" y="120" width="55" height="24" rx="12" fill="#34C759" opacity="0.8"/>
+                                            <text x="51" y="136" text-anchor="middle" fill="white" font-size="9" font-family="system-ui" font-weight="500">승인</text>
+                                            <rect x="88" y="120" width="58" height="24" rx="12" fill="#FF3B30" opacity="0.15" stroke="#FF3B30" stroke-width="0.5" stroke-opacity="0.4"/>
+                                            <text x="117" y="136" text-anchor="middle" fill="#FF3B30" font-size="9" font-family="system-ui" opacity="0.8">취소</text>
+                                            <rect x="20" y="182" width="130" height="20" rx="4" fill="#38383A"/>
+                                            <text x="85" y="196" text-anchor="middle" fill="#666" font-size="8" font-family="system-ui">NFC TAP HERE</text>
+                                            <rect x="20" y="210" width="130" height="8" rx="4" fill="#2a2a2a"/>
+                                            <circle cx="85" cy="230" r="6" fill="#38383A" stroke="#555" stroke-width="0.5"/>
+                                            <defs>
+                                                <linearGradient id="cu-body" x1="0" y1="0" x2="170" y2="250"><stop offset="0%" stop-color="#2d2d30"/><stop offset="100%" stop-color="#1c1c1e"/></linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="device-shine"></div>
+                                    <div class="device-shadow"></div>
+                                </div>
+                            </div>
                             <p><strong>개요:</strong> CU 편의점 전국 체인 Android 기반 결제 단말기 애플리케이션 개발</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, CS)</p>
-                            <ul>
-                                <li>Kotlin + Jetpack Compose를 활용한 Modern Native Android 앱 개발</li>
-                                <li>MVVM 아키텍처 패턴 적용으로 확장 가능한 코드 구조 설계</li>
-                                <li>Kotlin Coroutines를 통한 비동기 처리 및 성능 최적화</li>
-                                <li><strong>성능 최적화:</strong> 프로세스 사용 최적화 및 CPU 최적화 직접 수행</li>
-                                <li><strong>하드웨어 가속:</strong> HW 가속 활용으로 발열 문제 해결 및 앱 응답 속도 30% 개선</li>
-                                <li><strong>광고 시스템:</strong> ExoPlayer 기반 미디어 재생 시스템 설계 및 개발</li>
-                                <li>결제 프로토콜 및 보안 통신 구현 (네트워크 통신, 앱 보안)</li>
-                                <li>실시간 거래 처리 및 오류 복구 메커니즘 구현</li>
-                                <li>사용자 중심의 직관적인 UI/UX 설계 (Android Design Guidelines 준수)</li>
-                            </ul>
-                            <p><strong>성과:</strong> 현재 CU 편의점 전국 상용화 운영 중, 단말 당 매일 수천 건의 결제 처리</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">MVVM</span>
+                                <span class="tech-tag">Coroutines</span>
+                                <span class="tech-tag">ExoPlayer</span>
+                                <span class="tech-tag">HW 가속</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>CU 편의점 <strong>전국 상용화</strong> 운영 중, 단말 당 매일 수천 건 결제 처리</li>
+                                    <li>HW 가속 활용으로 발열 문제 해결 및 <strong>앱 응답 속도 30% 개선</strong></li>
+                                    <li>ExoPlayer 기반 광고 미디어 재생 시스템 구축</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>MVVM 아키텍처 패턴 적용으로 확장 가능한 코드 구조 설계</li>
+                                        <li>Kotlin Coroutines를 통한 비동기 처리 및 성능 최적화</li>
+                                        <li>프로세스 사용 최적화 및 CPU 최적화 직접 수행</li>
+                                        <li>결제 프로토콜 및 보안 통신 구현 (네트워크 통신, 앱 보안)</li>
+                                        <li>실시간 거래 처리 및 오류 복구 메커니즘 구현</li>
+                                        <li>사용자 중심의 직관적인 UI/UX 설계 (Android Design Guidelines 준수)</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="project">
                             <h5>3. Master/VISA Card RF LV2 컨택리스 인증</h5>
                             <p><strong>개요:</strong> 글로벌 카드 브랜드사 공식 컨택리스 결제 인증 획득 프로젝트</p>
                             <p><strong>역할:</strong> 인증 시스템 개발 및 검증 도구 구현</p>
-                            <ul>
-                                <li>EMV 컨택리스 결제 표준 및 카드 브랜드 규격 구현</li>
-                                <li>PyQt5 기반 카드 테스터 Emulator 개발 (Mastercard 인증용)</li>
-                                <li>VISA 인증용 단말기 앱 및 카드 Emulator 통합 개발</li>
-                                <li>EMV Tag 데이터 구조 분석 및 브랜드별 특화 태그 처리</li>
-                                <li>RF(Radio Frequency) 통신 프로토콜 및 ISO 14443 Type A/B 구현</li>
-                                <li>실시간 거래 데이터 검증 및 인증 테스트 자동화</li>
-                            </ul>
-                            <p><strong>성과:</strong> Mastercard 및 VISA 공식 LV2 인증 획득, 글로벌 핀테크 표준 준수 확인</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyQt5</span>
+                                <span class="tech-tag">EMV</span>
+                                <span class="tech-tag">ISO 14443</span>
+                                <span class="tech-tag">NFC/RF</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li><strong>Mastercard 및 VISA 공식 LV2 인증</strong> 획득</li>
+                                    <li>글로벌 핀테크 표준 준수 확인</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>EMV 컨택리스 결제 표준 및 카드 브랜드 규격 구현</li>
+                                        <li>PyQt5 기반 카드 테스터 Emulator 개발 (Mastercard 인증용)</li>
+                                        <li>VISA 인증용 단말기 앱 및 카드 Emulator 통합 개발</li>
+                                        <li>EMV Tag 데이터 구조 분석 및 브랜드별 특화 태그 처리</li>
+                                        <li>RF(Radio Frequency) 통신 프로토콜 및 ISO 14443 Type A/B 구현</li>
+                                        <li>실시간 거래 데이터 검증 및 인증 테스트 자동화</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="project">
                             <h5>4. Linux 기반 통합 서명패드</h5>
+                            <div class="device-showcase">
+                                <div class="device-3d device-signpad">
+                                    <div class="device-image">
+                                        <svg viewBox="0 0 220 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="4" y="4" width="212" height="152" rx="14" fill="url(#sp-body)" stroke="#444" stroke-width="1"/>
+                                            <rect x="12" y="12" width="130" height="100" rx="6" fill="#0a0f1a"/>
+                                            <rect x="12" y="12" width="130" height="100" rx="6" stroke="#007AFF" stroke-width="0.5" opacity="0.3"/>
+                                            <text x="77" y="36" text-anchor="middle" fill="#007AFF" font-size="9" font-family="system-ui" opacity="0.7">서명해 주세요</text>
+                                            <path d="M35 65 Q50 45 65 65 Q80 85 95 55 Q105 40 120 60" stroke="#5856D6" stroke-width="2" fill="none" opacity="0.6" stroke-linecap="round"/>
+                                            <rect x="24" y="90" width="50" height="14" rx="7" fill="#34C759" opacity="0.7"/>
+                                            <text x="49" y="101" text-anchor="middle" fill="white" font-size="7" font-family="system-ui" font-weight="500">확인</text>
+                                            <rect x="80" y="90" width="50" height="14" rx="7" fill="#FF3B30" opacity="0.15" stroke="#FF3B30" stroke-width="0.5" stroke-opacity="0.4"/>
+                                            <text x="105" y="101" text-anchor="middle" fill="#FF3B30" font-size="7" font-family="system-ui" opacity="0.8">다시</text>
+                                            <rect x="150" y="16" width="58" height="70" rx="6" fill="#1a1a2e" stroke="#333" stroke-width="0.5"/>
+                                            <text x="179" y="36" text-anchor="middle" fill="#666" font-size="7" font-family="system-ui">IC CARD</text>
+                                            <rect x="162" y="42" width="34" height="24" rx="3" fill="#FFD60A" opacity="0.3" stroke="#FFD60A" stroke-width="0.5" stroke-opacity="0.4"/>
+                                            <line x1="168" y1="48" x2="190" y2="48" stroke="#FFD60A" stroke-width="0.3" opacity="0.5"/>
+                                            <line x1="168" y1="54" x2="190" y2="54" stroke="#FFD60A" stroke-width="0.3" opacity="0.5"/>
+                                            <line x1="168" y1="60" x2="190" y2="60" stroke="#FFD60A" stroke-width="0.3" opacity="0.5"/>
+                                            <rect x="150" y="100" width="58" height="18" rx="4" fill="#38383A"/>
+                                            <text x="179" y="113" text-anchor="middle" fill="#666" font-size="6" font-family="system-ui">NFC</text>
+                                            <rect x="12" y="124" width="196" height="24" rx="4" fill="#1a1a2e" stroke="#333" stroke-width="0.5"/>
+                                            <text x="110" y="140" text-anchor="middle" fill="#555" font-size="7" font-family="system-ui">NICE INFORMATION & COMM.</text>
+                                            <defs>
+                                                <linearGradient id="sp-body" x1="0" y1="0" x2="220" y2="160"><stop offset="0%" stop-color="#2d2d30"/><stop offset="100%" stop-color="#1c1c1e"/></linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="device-shine"></div>
+                                    <div class="device-shadow"></div>
+                                </div>
+                            </div>
                             <p><strong>개요:</strong> 다중 VAN사 통신 스펙을 지원하는 All-in-One 통합 서명패드 최초 개발</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, 검증)</p>
-                            <ul>
-                                <li>NICE정보통신, KIS정보통신, NPG, 통합 스펙 4개 통신 프로토콜 구현</li>
-                                <li>C/C++ 기반 Linux 임베디드 시스템 개발</li>
-                                <li>RF(NFC), 바코드, EMV IC카드 결제 기능 통합 구현</li>
-                                <li>멀티 VAN사 자동 감지 및 스위칭 로직 설계</li>
-                                <li>실시간 서명 캡처 및 전자서명 검증 시스템</li>
-                                <li>하드웨어 드라이버 최적화 및 메모리 관리</li>
-                                <li>통신 암호화 및 거래 데이터 보안 처리</li>
-                            </ul>
-                            <p><strong>성과:</strong> 회사 최초 통합 서명패드 상용화, 다중 VAN사 지원으로 시장 확대</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">C/C++</span>
+                                <span class="tech-tag">Linux Embedded</span>
+                                <span class="tech-tag">NFC/RF</span>
+                                <span class="tech-tag">EMV IC</span>
+                                <span class="tech-tag">바코드</span>
+                                <span class="tech-tag">Serial 통신</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li><strong>회사 최초</strong> 통합 서명패드 상용화</li>
+                                    <li>다중 VAN사 지원(NICE, KIS, NPG 등 <strong>4개 스펙</strong>)으로 시장 확대</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>NICE정보통신, KIS정보통신, NPG, 통합 스펙 4개 통신 프로토콜 구현</li>
+                                        <li>RF(NFC), 바코드, EMV IC카드 결제 기능 통합 구현</li>
+                                        <li>멀티 VAN사 자동 감지 및 스위칭 로직 설계</li>
+                                        <li>실시간 서명 캡처 및 전자서명 검증 시스템</li>
+                                        <li>하드웨어 드라이버 최적화 및 메모리 관리</li>
+                                        <li>통신 암호화 및 거래 데이터 보안 처리</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="project">
                             <h5>5. Linux 기반 API 결제 단말기 플랫폼</h5>
                             <p><strong>개요:</strong> 단일 소스 기반 멀티 기종 지원 결제 단말기 플랫폼 개발</p>
                             <p><strong>역할:</strong> 무선/유선 단말기 개발 및 유지보수, 법인 전용 버전 12개 단독 개발</p>
-                            <ul>
-                                <li>C/C++ 기반 모듈형 API 아키텍처 설계</li>
-                                <li>6개 기종 공통 로직 추상화 및 하드웨어 독립적 구현</li>
-                                <li>50+ 법인 전용 버전 파생 제품 지원 플랫폼 구축</li>
-                                <li>무선(WiFi/LTE) 및 유선(Ethernet/Serial) 통신 통합 처리</li>
-                                <li>EMV Level 2 인증 기반 IC카드 결제 구현</li>
-                                <li>실시간 펌웨어 업데이트 및 원격 관리 시스템</li>
-                                <li>메모리 최적화 및 임베디드 성능 튜닝</li>
-                            </ul>
-                            <p><strong>성과:</strong> NICE 메인 단말기 플랫폼으로 채택, 개발 효율성 300% 향상</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">C/C++</span>
+                                <span class="tech-tag">Linux Embedded</span>
+                                <span class="tech-tag">EMV Level 2</span>
+                                <span class="tech-tag">WiFi/LTE</span>
+                                <span class="tech-tag">Ethernet/Serial</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li><strong>NICE 메인 단말기 플랫폼</strong>으로 채택</li>
+                                    <li><strong>개발 효율성 300% 향상</strong></li>
+                                    <li><strong>50+ 법인</strong> 전용 버전 파생 제품 지원 플랫폼 구축</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>C/C++ 기반 모듈형 API 아키텍처 설계</li>
+                                        <li>6개 기종 공통 로직 추상화 및 하드웨어 독립적 구현</li>
+                                        <li>무선(WiFi/LTE) 및 유선(Ethernet/Serial) 통신 통합 처리</li>
+                                        <li>EMV Level 2 인증 기반 IC카드 결제 구현</li>
+                                        <li>실시간 펌웨어 업데이트 및 원격 관리 시스템</li>
+                                        <li>메모리 최적화 및 임베디드 성능 튜닝</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="project">
                             <h5>6. 주유소 전용 무선 결제 단말기 (E1, GS칼텍스)</h5>
+                            <div class="device-showcase">
+                                <div class="device-3d device-wireless">
+                                    <div class="device-image">
+                                        <svg viewBox="0 0 140 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="4" y="4" width="132" height="212" rx="12" fill="url(#wl-body)" stroke="#444" stroke-width="1"/>
+                                            <rect x="12" y="16" width="116" height="100" rx="6" fill="#0a0f1a"/>
+                                            <rect x="12" y="16" width="116" height="100" rx="6" stroke="#007AFF" stroke-width="0.5" opacity="0.3"/>
+                                            <text x="70" y="34" text-anchor="middle" fill="#FF9500" font-size="8" font-family="system-ui" font-weight="600" opacity="0.8">주유 결제</text>
+                                            <rect x="22" y="42" width="96" height="30" rx="6" fill="#007AFF" opacity="0.1" stroke="#007AFF" stroke-width="0.5" stroke-opacity="0.3"/>
+                                            <text x="70" y="62" text-anchor="middle" fill="#007AFF" font-size="12" font-family="system-ui" font-weight="600">₩ 65,000</text>
+                                            <text x="70" y="80" text-anchor="middle" fill="#34C759" font-size="7" font-family="system-ui" opacity="0.8">휘발유 40L</text>
+                                            <rect x="22" y="90" width="45" height="16" rx="8" fill="#34C759" opacity="0.7"/>
+                                            <text x="44" y="102" text-anchor="middle" fill="white" font-size="7" font-family="system-ui" font-weight="500">승인</text>
+                                            <rect x="16" y="126" width="44" height="26" rx="4" fill="#38383A"/>
+                                            <text x="38" y="143" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">1</text>
+                                            <rect x="64" y="126" width="28" height="26" rx="4" fill="#38383A"/>
+                                            <text x="78" y="143" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">2</text>
+                                            <rect x="96" y="126" width="28" height="26" rx="4" fill="#38383A"/>
+                                            <text x="110" y="143" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">3</text>
+                                            <rect x="16" y="156" width="44" height="26" rx="4" fill="#38383A"/>
+                                            <text x="38" y="173" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">4</text>
+                                            <rect x="64" y="156" width="28" height="26" rx="4" fill="#38383A"/>
+                                            <text x="78" y="173" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">5</text>
+                                            <rect x="96" y="156" width="28" height="26" rx="4" fill="#38383A"/>
+                                            <text x="110" y="173" text-anchor="middle" fill="#888" font-size="8" font-family="system-ui">6</text>
+                                            <rect x="16" y="190" width="108" height="18" rx="4" fill="#34C759" opacity="0.3"/>
+                                            <text x="70" y="203" text-anchor="middle" fill="#34C759" font-size="7" font-family="system-ui" font-weight="500">ENTER</text>
+                                            <path d="M55 6 Q60 2 65 6" stroke="#666" stroke-width="1" fill="none" opacity="0.5"/>
+                                            <path d="M50 8 Q60 0 70 8" stroke="#666" stroke-width="0.8" fill="none" opacity="0.3"/>
+                                            <defs>
+                                                <linearGradient id="wl-body" x1="0" y1="0" x2="140" y2="220"><stop offset="0%" stop-color="#2d2d30"/><stop offset="100%" stop-color="#1c1c1e"/></linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="device-shine"></div>
+                                    <div class="device-shadow"></div>
+                                </div>
+                            </div>
                             <p><strong>개요:</strong> 주유소 특화 다단계 트랜잭션 지원 무선 결제 시스템</p>
                             <p><strong>역할:</strong> 단독 개발 (설계, 개발, 현장 테스트)</p>
-                            <ul>
-                                <li>E1, GS칼텍스 주유소 통신 스펙 맞춤 구현</li>
-                                <li>C/C++ Linux 기반 무선 결제 애플리케이션 개발</li>
-                                <li>주유 프리셋 → 주유 → 결제 다단계 트랜잭션 처리</li>
-                                <li>4G/WiFi 무선 통신 및 실시간 승인 시스템</li>
-                                <li>주유기 POS 연동 및 유량 데이터 동기화</li>
-                                <li>주유소 환경 최적화 (방폭, 온도, 진동 대응)</li>
-                                <li>거래 실패 시 자동 복구 및 데이터 무결성 보장</li>
-                            </ul>
-                            <p><strong>성과:</strong> E1, GS칼텍스 전국 주유소 배포 완료, 일평균 수만 건 거래 처리</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">C/C++</span>
+                                <span class="tech-tag">Linux Embedded</span>
+                                <span class="tech-tag">4G/WiFi</span>
+                                <span class="tech-tag">POS 연동</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>E1, GS칼텍스 <strong>전국 주유소 배포 완료</strong></li>
+                                    <li><strong>일평균 수만 건</strong> 거래 처리</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>E1, GS칼텍스 주유소 통신 스펙 맞춤 구현</li>
+                                        <li>주유 프리셋 → 주유 → 결제 다단계 트랜잭션 처리</li>
+                                        <li>4G/WiFi 무선 통신 및 실시간 승인 시스템</li>
+                                        <li>주유기 POS 연동 및 유량 데이터 동기화</li>
+                                        <li>주유소 환경 최적화 (방폭, 온도, 진동 대응)</li>
+                                        <li>거래 실패 시 자동 복구 및 데이터 무결성 보장</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -206,46 +446,98 @@
                             <h5>1. 기가지니 Android TV 전환 프로젝트</h5>
                             <p><strong>개요:</strong> Web 기반 셋톱박스를 Android TV 플랫폼으로 전환하는 대규모 마이그레이션 프로젝트</p>
                             <p><strong>역할:</strong> 메인 플랫폼 개발자</p>
-                            <ul>
-                                <li>Android TV 메인 애플리케이션 설계 및 개발</li>
-                                <li>부가 서비스 앱 통합 및 연동 시스템 구축</li>
-                                <li>미디어 콘텐츠 재생 및 배포 플랫폼 개발</li>
-                                <li>크로스 플랫폼 마이그레이션 (Web → Android TV) 주도</li>
-                                <li>Android TV SDK 및 Leanback Library 활용</li>
-                                <li>MVVM/MVP 아키텍처 패턴 적용</li>
-                                <li>RESTful API 및 WebSocket 통신 구현</li>
-                            </ul>
-                            <p><strong>성과:</strong> 2022년 상반기 Genie TV 서비스 런칭, 전국 서비스 상용화</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Android TV</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">MVVM/MVP</span>
+                                <span class="tech-tag">Leanback Library</span>
+                                <span class="tech-tag">RESTful API</span>
+                                <span class="tech-tag">WebSocket</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>2022년 상반기 <strong>Genie TV 서비스 런칭</strong></li>
+                                    <li><strong>전국 서비스 상용화</strong> 달성</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>Android TV 메인 애플리케이션 설계 및 개발</li>
+                                        <li>부가 서비스 앱 통합 및 연동 시스템 구축</li>
+                                        <li>미디어 콘텐츠 재생 및 배포 플랫폼 개발</li>
+                                        <li>크로스 플랫폼 마이그레이션 (Web → Android TV) 주도</li>
+                                        <li>Android TV SDK 및 Leanback Library 활용</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="project">
                             <h5>2. 영상 분할 시스템 개발</h5>
                             <p><strong>개요:</strong> 키즈랜드 동화 영상 콘텐츠의 자동 페이지 분할 시스템 개발</p>
                             <p><strong>역할:</strong> 시스템 설계 및 개발 단독 진행</p>
-                            <ul>
-                                <li>Python 기반 영상 처리 시스템 개발</li>
-                                <li>FFmpeg 라이브러리를 활용한 영상 프레임 분할 처리</li>
-                                <li>OpenCV 기반 이미지 유사도 검증 및 컴퓨터 비전 구현</li>
-                                <li>머신러닝 클러스터링 알고리즘 적용 (K-means, DBSCAN)</li>
-                                <li>대용량 미디어 파일 분산 처리 시스템 설계</li>
-                                <li>IPTV 서버 연동 및 데이터 파이프라인 구축</li>
-                            </ul>
-                            <p><strong>성과:</strong> 현재 KT 키즈랜드에서 상용화 운영 중</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FFmpeg</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">K-means</span>
+                                <span class="tech-tag">DBSCAN</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>현재 <strong>KT 키즈랜드에서 상용화</strong> 운영 중</li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>FFmpeg 라이브러리를 활용한 영상 프레임 분할 처리</li>
+                                        <li>OpenCV 기반 이미지 유사도 검증 및 컴퓨터 비전 구현</li>
+                                        <li>머신러닝 클러스터링 알고리즘 적용 (K-means, DBSCAN)</li>
+                                        <li>대용량 미디어 파일 분산 처리 시스템 설계</li>
+                                        <li>IPTV 서버 연동 및 데이터 파이프라인 구축</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="project">
                             <h5>3. AI 레크리에이션 플랫폼 프로젝트</h5>
                             <p><strong>개요:</strong> TV 내 참여형 게임 개발 (모션 인식 기반 인터랙티브 게임)</p>
                             <p><strong>역할:</strong> 영상처리 기능 개발</p>
-                            <ul>
-                                <li>Brain-pose 기반 실시간 모션 인식 시스템 개발</li>
-                                <li>Skeleton Detection 및 키포인트 추출 기술 구현</li>
-                                <li>기울기 데이터 정제 알고리즘 개발</li>
-                                <li>오차율 계산 수학적 모델링 및 통계 분석</li>
-                                <li>3D 좌표계 기반 각도 및 거리 계산</li>
-                                <li>실시간 피드백 시스템 및 게임화 요소 구현</li>
-                            </ul>
-                            <p><strong>성과:</strong> 공채 인턴 프로그램 대상 수상</p>
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Brain-pose</span>
+                                <span class="tech-tag">Skeleton Detection</span>
+                                <span class="tech-tag">3D 좌표계</span>
+                            </div>
+                            <div class="project-key-results">
+                                <ul>
+                                    <li>공채 인턴 프로그램 <strong>대상 수상</strong></li>
+                                </ul>
+                            </div>
+                            <div class="project-details-section">
+                                <button class="details-toggle" aria-expanded="false">
+                                    <span class="toggle-arrow">▶</span> 구현 상세
+                                </button>
+                                <div class="details-content">
+                                    <ul>
+                                        <li>Brain-pose 기반 실시간 모션 인식 시스템 개발</li>
+                                        <li>Skeleton Detection 및 키포인트 추출 기술 구현</li>
+                                        <li>기울기 데이터 정제 알고리즘 개발</li>
+                                        <li>오차율 계산 수학적 모델링 및 통계 분석</li>
+                                        <li>3D 좌표계 기반 각도 및 거리 계산</li>
+                                        <li>실시간 피드백 시스템 및 게임화 요소 구현</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

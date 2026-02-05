@@ -11,6 +11,8 @@ class PortfolioApp {
         this.setupNavbarEffects();
         this.setupInteractiveEffects();
         this.setupAccessibility();
+        this.setupDeviceTilt();
+        this.setupDetailToggles();
     }
 
     // Smooth scrolling for navigation links
@@ -275,6 +277,99 @@ class PortfolioApp {
                 element.style.transitionDuration = '0.01s';
             });
         }
+    }
+
+    // 3D Device tilt effect
+    setupDeviceTilt() {
+        const devices = document.querySelectorAll('.device-3d');
+        const maxTilt = 15;
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if (isTouchDevice) return;
+
+        devices.forEach(device => {
+            const showcase = device.closest('.device-showcase');
+            let rafId = null;
+
+            showcase.addEventListener('mousemove', (e) => {
+                if (rafId) cancelAnimationFrame(rafId);
+
+                rafId = requestAnimationFrame(() => {
+                    const rect = showcase.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateY = ((x - centerX) / centerX) * maxTilt;
+                    const rotateX = ((y - centerY) / centerY) * -maxTilt;
+
+                    device.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+                    // Move shine effect
+                    const shine = device.querySelector('.device-shine');
+                    if (shine) {
+                        const shinePos = (x / rect.width) * 200;
+                        shine.style.backgroundPosition = `${shinePos}% 0`;
+                    }
+
+                    // Move shadow
+                    const shadow = device.querySelector('.device-shadow');
+                    if (shadow) {
+                        const shadowX = ((x - centerX) / centerX) * 10;
+                        const shadowScale = 1 - Math.abs(rotateX) / 100;
+                        shadow.style.transform = `translateX(${shadowX}px) scaleY(${shadowScale})`;
+                    }
+
+                    rafId = null;
+                });
+            });
+
+            showcase.addEventListener('mouseleave', () => {
+                if (rafId) cancelAnimationFrame(rafId);
+
+                device.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+                device.style.transform = 'rotateX(0) rotateY(0)';
+
+                const shine = device.querySelector('.device-shine');
+                if (shine) {
+                    shine.style.backgroundPosition = '-100% 0';
+                }
+
+                const shadow = device.querySelector('.device-shadow');
+                if (shadow) {
+                    shadow.style.transform = 'translateX(0) scaleY(1)';
+                }
+
+                setTimeout(() => {
+                    device.style.transition = 'transform 0.15s ease-out';
+                }, 500);
+            });
+
+            showcase.addEventListener('mouseenter', () => {
+                device.style.transition = 'transform 0.15s ease-out';
+            });
+        });
+    }
+
+    // Collapsible details toggle
+    setupDetailToggles() {
+        document.querySelectorAll('.details-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                if (isOpen) {
+                    content.style.maxHeight = '0px';
+                    content.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
     }
 
     // Utility method to detect if element is in viewport
