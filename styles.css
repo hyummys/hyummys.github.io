@@ -23,16 +23,6 @@
     --blur: blur(20px);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-primary: #F5F5F7;
-        --text-secondary: #A1A1A6;
-        --background-primary: #000000;
-        --background-secondary: #1D1D1F;
-        --surface: rgba(29, 29, 31, 0.8);
-        --border: rgba(255, 255, 255, 0.1);
-    }
-}
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -405,19 +395,6 @@ section h2::after {
     line-height: 1.5;
 }
 
-@media (prefers-color-scheme: dark) {
-    .project {
-        background: rgba(29, 29, 31, 0.5);
-    }
-
-    .project:hover {
-        background: rgba(29, 29, 31, 0.8);
-    }
-
-    .project-key-results {
-        background: rgba(52, 199, 89, 0.08);
-    }
-}
 
 /* Project Tech Stack Tags */
 .project-tech-stack {
@@ -1109,6 +1086,156 @@ footer {
     .device-wireless .device-image {
         width: 120px;
     }
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 48px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+}
+
+.cta-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-card {
+    display: block;
+    text-decoration: none;
+    background: var(--background-secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    cursor: pointer;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-card:hover::before {
+    opacity: 1;
+}
+
+.cta-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-card-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.cta-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.cta-card-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.cta-card-arrow {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.cta-card:hover .cta-card-arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 24px 16px;
+    }
+
+    .cta-card {
+        padding: 28px 24px;
+    }
+
+    .cta-card-title {
+        font-size: 20px;
+    }
+}
+
+/* Page Navigation (for resume/portfolio pages) */
+.page-nav {
+    display: inline-flex;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.page-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.page-nav a:hover {
+    background: rgba(0, 122, 255, 0.1);
+    border-color: var(--primary-color);
 }
 
 /* Responsive Design for Projects */
