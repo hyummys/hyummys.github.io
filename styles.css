@@ -943,6 +943,14 @@ footer {
     height: 100%;
 }
 
+.device-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
 .device-shine {
     position: absolute;
     top: 0;
@@ -968,6 +976,11 @@ footer {
     background-position: 100% 0;
 }
 
+/* Hide shine overlay on real photo devices */
+.device-image:has(img) + .device-shine {
+    opacity: 0.4;
+}
+
 .device-3d .device-shadow {
     position: absolute;
     bottom: -20px;
@@ -982,13 +995,17 @@ footer {
 
 /* Device type sizes */
 .device-android-terminal .device-image {
-    width: 160px;
-    height: 240px;
+    width: 180px;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
 }
 
 .device-cu-terminal .device-image {
-    width: 170px;
-    height: 250px;
+    width: 180px;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
 }
 
 .device-signpad .device-image {
@@ -1003,8 +1020,10 @@ footer {
 }
 
 .device-wireless .device-image {
-    width: 140px;
-    height: 220px;
+    width: 200px;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
 }
 
 /* Device hover state */
@@ -1017,6 +1036,19 @@ footer {
         0 30px 80px rgba(0, 0, 0, 0.35),
         0 0 0 1px rgba(255, 255, 255, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Real photo devices - transparent background, drop shadow only */
+.device-3d:hover .device-image:has(img) {
+    box-shadow: none;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.device-image:has(img) {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2));
 }
 
 /* Device placeholder label */
@@ -1043,13 +1075,11 @@ footer {
     }
 
     .device-android-terminal .device-image {
-        width: 120px;
-        height: 180px;
+        width: 140px;
     }
 
     .device-cu-terminal .device-image {
-        width: 130px;
-        height: 190px;
+        width: 140px;
     }
 
     .device-signpad .device-image {
@@ -1058,20 +1088,17 @@ footer {
     }
 
     .device-wireless .device-image {
-        width: 110px;
-        height: 170px;
+        width: 150px;
     }
 }
 
 @media (max-width: 480px) {
     .device-android-terminal .device-image {
-        width: 100px;
-        height: 150px;
+        width: 120px;
     }
 
     .device-cu-terminal .device-image {
-        width: 110px;
-        height: 160px;
+        width: 120px;
     }
 
     .device-signpad .device-image {
@@ -1080,8 +1107,7 @@ footer {
     }
 
     .device-wireless .device-image {
-        width: 90px;
-        height: 140px;
+        width: 120px;
     }
 }
 
