@@ -31,3 +31,4 @@ yarn-error.log*
 # Claude development files
 CLAUDE.md
 .claude/settings.local.json
+/.omc

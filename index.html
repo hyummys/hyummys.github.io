@@ -103,7 +103,7 @@
                         <h4>🎯 주요 프로젝트</h4>
                         
                         <div class="project">
-                            <h5>1. 차세대 Android 결제 단말기 개발</h5>
+                            <h5>1. 차세대 Android 결제 단말기 (X990 CAT) — 일반형 상용 단말기</h5>
                             <div class="device-showcase">
                                 <div class="device-3d device-android-terminal">
                                     <div class="device-image">
@@ -113,18 +113,22 @@
                                     <div class="device-shadow"></div>
                                 </div>
                             </div>
-                            <p><strong>개요:</strong> Modern Android 기술 스택 기반 차세대 결제 단말기 플랫폼 구축</p>
-                            <p><strong>역할:</strong> 단독 기획/설계/개발 (메인 개발자)</p>
+                            <p><strong>개요:</strong> Verifone X990 기반 차세대 Android 결제 단말기 플랫폼 구축. 일반형 단말기로 출시하여 상용화 완료. 2026년 6월부터 글로벌 패션 브랜드 <strong>H&M</strong> 매장에도 도입 예정.</p>
+                            <p><strong>역할:</strong> 단독 기획/설계/개발 (메인 개발자) — 469커밋, Kotlin 193개 파일, AIDL 70개 하드웨어 인터페이스</p>
                             <div class="project-tech-stack">
-                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Kotlin 2.0</span>
                                 <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">Material 3</span>
                                 <span class="tech-tag">MVVM</span>
                                 <span class="tech-tag">Hilt</span>
                                 <span class="tech-tag">Coroutines/Flow</span>
                                 <span class="tech-tag">Retrofit</span>
                                 <span class="tech-tag">OkHttp</span>
                                 <span class="tech-tag">Room</span>
-                                <span class="tech-tag">Android Keystore</span>
+                                <span class="tech-tag">AIDL</span>
+                                <span class="tech-tag">SEED 암호화</span>
+                                <span class="tech-tag">TMS</span>
+                                <span class="tech-tag">TRS</span>
                                 <span class="tech-tag">PCI DSS</span>
                                 <span class="tech-tag">OCR</span>
                                 <span class="tech-tag">JUnit</span>
@@ -132,9 +136,12 @@
                             </div>
                             <div class="project-key-results">
                                 <ul>
+                                    <li><strong>일반형 결제 단말기로 상용화</strong> 출시 완료, 2026.06~ <strong>H&M 매장 도입 예정</strong></li>
                                     <li>자체 로직 기반 설계로 <strong>89.8% 코드 재사용률</strong> 달성 (제조사 리더기 모듈 제외)</li>
+                                    <li><strong>AIDL 70개 인터페이스</strong> 통합 — EMV, 암호화, 스캐너, 카드리더 하드웨어 바인딩</li>
+                                    <li><strong>8개 ViewModel</strong> 기반 결제 플로우 설계 (신용카드/바코드/현금IC/현금영수증/Tax Refund 등)</li>
                                     <li><strong>여권 리딩 OCR</strong> 기능 적용으로 해외 결제 및 면세 서비스 지원</li>
-                                    <li>Modern Android 개발 패턴 적용으로 유지보수성 및 확장성 극대화</li>
+                                    <li><strong>TRS(Tax Refund Service)</strong> 기능 추가로 외국인 관광객 즉시 환급 서비스 지원</li>
                                 </ul>
                             </div>
                             <div class="project-details-section">
@@ -143,9 +150,14 @@
                                 </button>
                                 <div class="details-content">
                                     <ul>
-                                        <li>Hilt를 통한 모듈화된 의존성 주입 구조 설계</li>
+                                        <li>Hilt를 통한 모듈화된 의존성 주입 구조 설계 (8개 모듈: data, di, model, nav, receiver, service, ui, viewmodel)</li>
                                         <li>Kotlin Coroutines/Flow 활용한 반응형 프로그래밍 및 성능 최적화</li>
-                                        <li>Jetpack Compose 기반 선언형 UI로 직관적인 사용자 경험 제공</li>
+                                        <li>Jetpack Compose (Material 3) 기반 선언형 UI — 커스텀 키패드, 서명 캡처, 영수증 출력 등</li>
+                                        <li>AIDL 기반 X990 하드웨어 서비스 바인딩 (IEMV, VFK, 스캐너, IC/RF/MSR 카드리더)</li>
+                                        <li>SEED 암호화 및 TMS 연동을 통한 암호키/가맹점 데이터 관리</li>
+                                        <li>VAN 프로토콜 통신 (CRC16 체크섬) 및 실시간 거래 승인 처리</li>
+                                        <li>서명 캡처 이중 제출 방지 가드 (UI + ViewModel 듀얼 레이어 검증)</li>
+                                        <li>소프트웨어 자동 업데이트 (TMS 연동, 업데이트 시간 예약 설정)</li>
                                         <li>Retrofit + OkHttp 기반 안정적인 통신 레이어 구현</li>
                                         <li>Room Database를 활용한 거래 데이터 영속성 관리</li>
                                         <li>Android Keystore, 암호화 통신, PCI DSS 준수</li>
@@ -156,7 +168,7 @@
                         </div>
 
                         <div class="project">
-                            <h5>2. BGF리테일 CU Android 결제 단말기</h5>
+                            <h5>2. BGF리테일 CU Android 결제 단말기 (BAM-V1)</h5>
                             <div class="device-showcase">
                                 <div class="device-3d device-cu-terminal">
                                     <div class="device-image">
@@ -166,23 +178,29 @@
                                     <div class="device-shadow"></div>
                                 </div>
                             </div>
-                            <p><strong>개요:</strong> CU 편의점 전국 체인 Android 기반 결제 단말기 애플리케이션 개발</p>
-                            <p><strong>역할:</strong> 단독 개발 (설계, 개발, CS)</p>
+                            <p><strong>개요:</strong> 국내 1위 유통기업 <strong>BGF리테일의 CU 편의점</strong> 전국 체인에 실제 상용화되어 운영 중인 Android 결제 단말기 애플리케이션. Serial/BLE/USB 멀티 프로토콜 통신 레이어 설계 및 7개+ 결제 수단 지원.</p>
+                            <p><strong>역할:</strong> 단독 개발 (설계, 개발, CS) — 344커밋, Kotlin 99개 파일, C++ 네이티브 코드 포함</p>
                             <div class="project-tech-stack">
                                 <span class="tech-tag">Kotlin</span>
                                 <span class="tech-tag">Jetpack Compose</span>
                                 <span class="tech-tag">MVVM</span>
-                                <span class="tech-tag">Coroutines</span>
+                                <span class="tech-tag">Coroutines/Flow</span>
+                                <span class="tech-tag">NDK/JNI</span>
+                                <span class="tech-tag">C++ (XModem)</span>
+                                <span class="tech-tag">BLE GATT</span>
+                                <span class="tech-tag">Serial 통신</span>
+                                <span class="tech-tag">SEED 암호화</span>
                                 <span class="tech-tag">ExoPlayer</span>
                                 <span class="tech-tag">HW 가속</span>
-                                <span class="tech-tag">XModem</span>
                             </div>
                             <div class="project-key-results">
                                 <ul>
-                                    <li>CU 편의점 <strong>전국 상용화</strong> 운영 중, 단말 당 매일 수천 건 결제 처리</li>
-                                    <li>HW 가속 활용으로 발열 문제 해결 및 <strong>앱 응답 속도 30% 개선</strong></li>
+                                    <li><strong>국내 1위 유통기업 BGF리테일 CU 편의점 전국 상용화</strong> 운영 중, 단말 당 매일 수천 건 결제 처리</li>
+                                    <li><strong>멀티 프로토콜 통신</strong>: Serial 4포트 동시 관리 + BLE GATT 서버 + USB 업데이트 파이프라인</li>
+                                    <li><strong>7개+ 결제 수단</strong> 상태 머신 관리 (신용카드/선불카드/교통카드(T-money)/HanPay/UPAY 등)</li>
+                                    <li>XModem 펌웨어 업데이트 시스템 — 시리얼 응답 지연 <strong>50% 개선</strong> (200~500ms → 100~300ms)</li>
                                     <li>정형화된 다운로드 프로토콜(XModem) 속도 <strong>17,000% 효율 개선</strong> (약 170배)</li>
-                                    <li>ExoPlayer 기반 광고 미디어 재생 시스템 구축</li>
+                                    <li>HW 가속 활용으로 발열 문제 해결 및 <strong>앱 응답 속도 30% 개선</strong></li>
                                 </ul>
                             </div>
                             <div class="project-details-section">
@@ -191,12 +209,16 @@
                                 </button>
                                 <div class="details-content">
                                     <ul>
-                                        <li>MVVM 아키텍처 패턴 적용으로 확장 가능한 코드 구조 설계</li>
-                                        <li>Kotlin Coroutines를 통한 비동기 처리 및 성능 최적화</li>
+                                        <li>MVVM 아키텍처 + 핸들러 레지스트리 패턴 (11개 전문 핸들러로 결제 커맨드 처리)</li>
+                                        <li>Kotlin Coroutines/Flow 기반 반응형 상태 관리 (AtomicBoolean + Lock 스레드 안전성)</li>
+                                        <li>NDK/JNI 네이티브 C 코드로 XModem 프로토콜 및 OpenSSL 통합 구현</li>
+                                        <li>BLE GATT 서버 — 블루투스 본딩, 상호 인증, Serial ↔ BLE 자동 페일오버</li>
+                                        <li>SEED 암호화 (한국 정부 표준) 및 상호 인증 프로토콜 구현</li>
+                                        <li>디바이스 무결성 검증 및 시스템 키 주입(DIK) 관리</li>
+                                        <li>Jetpack Compose 30+ 화면 — 커스텀 키패드, 서명 캡처, 메뉴 시스템</li>
+                                        <li>ExoPlayer 기반 광고 미디어 시스템 (CSV 중앙관리, H.264 HW 가속, GPU 메모리 최적화)</li>
                                         <li>프로세스 사용 최적화 및 CPU 최적화 직접 수행</li>
-                                        <li>결제 프로토콜 및 보안 통신 구현 (네트워크 통신, 앱 보안)</li>
-                                        <li>실시간 거래 처리 및 오류 복구 메커니즘 구현</li>
-                                        <li>사용자 중심의 직관적인 UI/UX 설계 (Android Design Guidelines 준수)</li>
+                                        <li>부트 시 자동 시작, GPIO 하드웨어 전원 제어, 화면 밝기 제어</li>
                                     </ul>
                                 </div>
                             </div>
