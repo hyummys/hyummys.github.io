@@ -1,0 +1,24 @@
+# GitHub Pages (Jekyll) 설정
+#
+# exclude: 아래 파일/폴더는 웹 배포(빌드 결과)에서 제외됩니다.
+# git 저장소에는 그대로 남아 버전 관리되지만, https://hyummys.github.io 에는 올라가지 않습니다.
+# (주의: 이미 푸시되어 공개된 적이 있다면, push 후 캐시/검색엔진/git 히스토리에는 흔적이 남을 수 있습니다.)
+
+exclude:
+  # ── 개인 포트폴리오 문서 (제출 전용, 웹 비공개) ──
+  - cv/                    # 통합 포트폴리오 (전화번호 등 개인정보 포함)
+  - STAR_template.md       # 인터뷰 원본 답변
+  - resume.html            # 구 이력서 페이지
+  - toss-portfolio.md      # 구 토스 지원용 마크다운
+  - toss-resume.md         # 구 토스 지원용 마크다운
+
+  # ── 개인정보·지원 전략 포함 ──
+  - CLAUDE.md              # 연락처 + 지원 목표 전략 문서
+
+  # ── 빌드 산출물 / 의존성 (웹에 불필요, 용량만 차지) ──
+  - node_modules/
+  - generate-pdf.js
+  - PDF-CONVERSION-GUIDE.md
+  - PDF_GENERATION.md
+  - package.json
+  - package-lock.json
