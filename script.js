@@ -38,7 +38,7 @@ class PortfolioApp {
     // Scroll-based animations
     setupScrollAnimations() {
         const observerOptions = {
-            threshold: 0.1,
+            threshold: 0,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -55,19 +55,13 @@ class PortfolioApp {
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('section').forEach((section, index) => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = `opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.1}s, transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.1}s`;
+        // Observe all sections — only add animate-in class, never hide content
+        document.querySelectorAll('section').forEach((section) => {
             observer.observe(section);
         });
 
-        // Observe skill tags, experience items, project cards and contact items for individual animations
-        document.querySelectorAll('.skill-tag, .experience-item, .contact-item, .project-card').forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = `opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.05}s, transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) ${index * 0.05}s`;
+        // Observe individual elements — only add animate-in class, never hide content
+        document.querySelectorAll('.skill-tag, .experience-item, .contact-item, .project-card').forEach((element) => {
             observer.observe(element);
         });
     }
