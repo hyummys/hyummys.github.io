@@ -25,12 +25,6 @@
 - **키즈랜드 동화 자동 페이지 분할** — FFmpeg/OpenCV + K-means/DBSCAN으로 애니메이션 동화 50편을 원작 도서의 페이지 단위로 자동 분할.
 - **AI 레크리에이션 플랫폼** — Skeleton Detection 기반 동작 인식 게임. KT 공채 인턴 개발 대회 대상 수상.
 
-## 개인 프로젝트
-
-### 한의원 웹사이트 — [toad365.onrender.com](https://toad365.onrender.com)
-
-Django 기반 풀스택 웹사이트. PostgreSQL · 11개 데이터 모델 · TinyMCE 기반 Admin 커스터마이징으로 비개발자가 콘텐츠를 직접 관리할 수 있는 구조.
-
 ## 기술 스택
 
 - **Android**: Kotlin · Jetpack Compose · Material 3 · MVVM · Hilt · Coroutines/Flow · Retrofit/OkHttp · Room · ExoPlayer · JUnit/Mockk

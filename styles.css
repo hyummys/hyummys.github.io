@@ -443,6 +443,42 @@ section h2::after {
     font-size: 14px;
 }
 
+/* About Section (separate intro block) */
+.about-section {
+    padding: 40px 48px;
+}
+
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text-secondary);
+    margin: 0 0 18px;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .about-section {
+        padding: 28px 24px;
+    }
+    .about-content p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
 /* Showcase Grid (Project-only Landing) */
 .showcase-intro {
     margin: 8px 0 24px;
