@@ -469,6 +469,49 @@ section h2::after {
     font-weight: 600;
 }
 
+.about-content .about-lead {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-content .about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content .about-list li {
+    position: relative;
+    padding: 10px 0 10px 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.about-content .about-list li:last-child {
+    border-bottom: none;
+}
+
+.about-content .about-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.about-content .about-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 @media (max-width: 640px) {
     .about-section {
         padding: 28px 24px;
@@ -536,6 +579,11 @@ section h2::after {
     max-width: 70%;
     max-height: 110px;
     object-fit: contain;
+}
+
+.showcase-card-img img.diagram {
+    max-width: 94%;
+    max-height: 124px;
 }
 
 .showcase-card-img.no-image {
@@ -1625,4 +1673,137 @@ footer {
     .project-header h3 {
         font-size: 20px;
     }
+}
+/* ── Blog Article ── */
+.article-topbar {
+    background: var(--surface);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.article-topbar a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.article-topbar a:hover { color: var(--primary-color); }
+
+.article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+}
+
+.article-header {
+    margin-bottom: 44px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.article-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+    margin-bottom: 14px;
+}
+
+.article-header .article-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.article-header .article-meta {
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.article-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 52px 0 18px;
+}
+
+.article-body p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin: 20px 0;
+    color: #2c2c2e;
+}
+
+.article-body ul { margin: 20px 0; padding-left: 22px; }
+
+.article-body li {
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 12px 0;
+    color: #2c2c2e;
+}
+
+.article-body strong { color: var(--text-primary); font-weight: 600; }
+
+.article-body code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 14.5px;
+}
+
+.article-body pre {
+    background: #1d1d1f;
+    padding: 20px 22px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 26px 0;
+}
+
+.article-body pre code {
+    background: none;
+    color: #f5f5f7;
+    padding: 0;
+    font-size: 13.5px;
+    line-height: 1.75;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 26px 0;
+    font-size: 15px;
+}
+
+.article-body th, .article-body td {
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-body th { background: var(--background-secondary); font-weight: 600; }
+
+.article-body em {
+    color: var(--text-secondary);
+    font-style: normal;
+}
+
+@media (max-width: 640px) {
+    .article-wrap { padding: 36px 20px 56px; }
+    .article-header h1 { font-size: 27px; }
+    .article-header .article-sub { font-size: 15.5px; }
+    .article-body p, .article-body li { font-size: 16px; }
+    .article-body h2 { font-size: 21px; margin: 40px 0 14px; }
+    .article-body pre { padding: 16px; }
+    .article-body pre code { font-size: 12.5px; }
 }

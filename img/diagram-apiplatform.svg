@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a8a8ad"/>
+    </marker>
+  </defs>
+
+  <!-- 단일 소스 -->
+  <rect x="6" y="50" width="150" height="60" rx="8" fill="#E8F1FF" stroke="#007AFF"/>
+  <text x="81" y="76" text-anchor="middle" font-size="15" font-weight="600" fill="#1D1D1F">단일 소스</text>
+  <text x="81" y="96" text-anchor="middle" font-size="12.5" fill="#86868B">공통 결제 로직</text>
+
+  <!-- arrow: 전처리 빌드 분기 -->
+  <line x1="158" y1="80" x2="212" y2="80" stroke="#a8a8ad" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="185" y="44" text-anchor="middle" font-size="11.5" fill="#86868B">전처리</text>
+  <text x="185" y="58" text-anchor="middle" font-size="11.5" fill="#86868B">빌드 분기</text>
+
+  <!-- 6 기종 -->
+  <rect x="216" y="50" width="150" height="60" rx="8" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="291" y="76" text-anchor="middle" font-size="15" font-weight="600" fill="#1D1D1F">6개 기종 동시 지원</text>
+  <text x="291" y="96" text-anchor="middle" font-size="12.5" fill="#86868B">무선 (WiFi·LTE) · 유선</text>
+
+  <!-- arrow: 법인별 파생 -->
+  <line x1="368" y1="80" x2="422" y2="80" stroke="#a8a8ad" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="395" y="44" text-anchor="middle" font-size="11.5" fill="#86868B">법인별</text>
+  <text x="395" y="58" text-anchor="middle" font-size="11.5" fill="#86868B">파생</text>
+
+  <!-- 50+ 법인 -->
+  <rect x="426" y="50" width="148" height="60" rx="8" fill="#E9F8EE" stroke="#34C759"/>
+  <text x="500" y="76" text-anchor="middle" font-size="15" font-weight="600" fill="#248A3D">50+ 법인 버전 운영</text>
+  <text x="500" y="96" text-anchor="middle" font-size="12.5" fill="#248A3D">NICE 메인 플랫폼</text>
+</svg>

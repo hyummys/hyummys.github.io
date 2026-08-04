@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a8a8ad"/>
+    </marker>
+  </defs>
+
+  <!-- POS -->
+  <rect x="6" y="56" width="78" height="48" rx="8" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="45" y="85" text-anchor="middle" font-size="15" font-weight="600" fill="#1D1D1F">POS</text>
+
+  <!-- arrow: Serial -->
+  <line x1="86" y1="80" x2="118" y2="80" stroke="#a8a8ad" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="102" y="68" text-anchor="middle" font-size="11.5" fill="#86868B">Serial</text>
+
+  <!-- 식별 -->
+  <rect x="122" y="50" width="150" height="60" rx="8" fill="#E8F1FF" stroke="#007AFF"/>
+  <text x="197" y="76" text-anchor="middle" font-size="15" font-weight="600" fill="#1D1D1F">패킷 헤더 분석</text>
+  <text x="197" y="96" text-anchor="middle" font-size="12.5" fill="#86868B">VAN 자동 식별</text>
+
+  <!-- arrow to codebase -->
+  <line x1="274" y1="80" x2="306" y2="80" stroke="#a8a8ad" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 단일 코드베이스 container -->
+  <rect x="310" y="16" width="264" height="128" rx="10" fill="none" stroke="#a8a8ad" stroke-dasharray="5 4"/>
+  <text x="442" y="38" text-anchor="middle" font-size="13" font-weight="600" fill="#1D1D1F">단일 코드베이스 · 통합 전문 매칭</text>
+
+  <!-- 4 VAN chips (2x2) -->
+  <rect x="326" y="52" width="112" height="36" rx="7" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="382" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#1D1D1F">NICE</text>
+
+  <rect x="446" y="52" width="112" height="36" rx="7" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="502" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#1D1D1F">KIS</text>
+
+  <rect x="326" y="96" width="112" height="36" rx="7" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="382" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#1D1D1F">NPG</text>
+
+  <rect x="446" y="96" width="112" height="36" rx="7" fill="#ffffff" stroke="#d2d2d7"/>
+  <text x="502" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#1D1D1F">통합</text>
+</svg>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="프로토콜 명령 45종 · 화면 22개, MVVM으로 시작해 규모가 커지며 보인 것들">
+    <meta name="author" content="James Seo">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hyummys.github.io/blog/android-multipad-retrospective.html">
+    <meta property="og:title" content="안드로이드 멀티패드 개발 회고 — James Seo">
+    <meta property="og:description" content="프로토콜 명령 45종 · 화면 22개, MVVM으로 시작해 규모가 커지며 보인 것들">
+
+    <title>안드로이드 멀티패드 개발 회고 — James Seo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>J</text></svg>">
+</head>
+<body>
+    <div class="article-topbar">
+        <div class="container">
+            <a href="../index.html">&larr; 서재현 (James Seo)</a>
+        </div>
+    </div>
+
+    <article class="article-wrap">
+        <div class="article-header">
+            <h1>안드로이드 멀티패드 개발 회고</h1>
+            <p class="article-sub">프로토콜 명령 45종 · 화면 22개, MVVM으로 시작해 규모가 커지며 보인 것들</p>
+            <p class="article-meta">2026.08.04 · James Seo</p>
+        </div>
+
+        <div class="article-body">
+<p>편의점 결제 단말기에 들어가는 안드로이드 앱을 만들었다. 개발 착수부터 출시까지 7개월. 지금은 전국 6,000대가 넘는 단말기에서 돌아가고 하루 100만 건 넘는 결제를 처리한다. 24시간 돌아가는 기기라, 이 앱이 1분 멈추면 그 매장은 그 시간 동안 카드 결제를 못 받는다.</p>
+<p>출시하고 반년쯤 지나 사내 세미나에서 이 앱 구조를 발표할 일이 생겼다. 자료를 만들면서 "잘 굴러가는 부분"과 "다시 만든다면 다르게 갈 부분"을 나눠 적었는데, 후자를 정리하다가 숫자 하나를 발견했다.</p>
+<p><strong>화면을 하나 추가하려면 코드 14곳을 고쳐야 한다.</strong></p>
+<p>세어보기 전엔 몰랐다. 그냥 "화면 추가는 좀 귀찮은 작업"이라고만 생각했지, 그게 14곳인 줄은 몰랐다. 이 글은 그 14곳이 어디서 왔고, 왜 처음엔 그게 문제가 아니었으며, 다음엔 어떻게 할 건지에 대한 기록이다.</p>
+<h2>어떤 앱인가</h2>
+<p>결제 단말기는 겉보기엔 화면 달린 기기 하나지만 안에는 프로세서가 둘이다. 안드로이드가 도는 AP와, 카드 리더·암호화를 맡는 보안 프로세서(SP). 내가 만든 앱은 그 사이, 그리고 POS와의 사이에 앉아 있다.</p>
+<pre><code>POS ──(시리얼)── [ 안드로이드 앱 (AP) ] ──(시리얼)── 보안 프로세서 (SP)
+</code></pre>
+<p>그래서 이 앱의 본업은 화면 그리기가 아니라 <strong>비동기 통신 중계</strong>에 가깝다. 어느 쪽에서든 아무 때나 데이터가 올라오고, 거기 맞춰 화면이 바뀐다. 처리해야 할 프로토콜 명령이 45종, 결제 카테고리가 9종, Compose 화면이 22개. 시리얼 포트 4개와 BLE가 동시에 열려 있다.</p>
+<h2>MVVM을 고른 이유</h2>
+<p>안드로이드 아키텍처 논쟁은 거의 종교 전쟁이라, "표준이니까"로 정하고 싶지 않았다. 이 프로젝트에 한정해서 근거를 적어봤다.</p>
+<p><strong>본업이 비동기 이벤트 스트림이다.</strong> 통신 이벤트가 계속 올라오고 화면이 따라간다. <code>StateFlow</code>면 "통신 상태 → 화면" 흐름이 그대로 모델링된다.</p>
+<p><strong>화면이 통신에 종속된다.</strong> 사용자 터치보다 수신 패킷이 화면을 더 많이 바꾼다. View가 ViewModel을 관찰만 하는 구조가 MVC/MVP보다 결합도가 낮다.</p>
+<p><strong>거래 상태가 화면 수명보다 길다.</strong> 결제 도중 화면이 회전하거나 재생성돼도 거래는 이어져야 한다. ViewModel이 Activity 수명을 넘어 사는 게 그대로 요구사항이었다.</p>
+<p><strong>Compose와 붙는다.</strong> Compose가 이미 상태 기반이라 <code>StateFlow</code> + <code>collectAsState</code>가 자연스럽다.</p>
+<p>MVI도 봤는데 접었다. 결제 카테고리가 9종이고 각자 화면 흐름이 다른데, Intent/State/Reducer를 카테고리마다 반복해서 쓰는 부담이 당시 인원 대비 컸다. 지금도 이 판단은 후회하지 않는다. 다만 파생 제품에서 화면 흐름이 더 복잡해지면 그땐 도입 가치가 있다고 본다.</p>
+<h2>잘 굴러간 것 — 핸들러 레지스트리</h2>
+<p>이 도메인의 특징은 <strong>명령이 운영 중에도 계속 늘어난다</strong>는 것이다. 새 결제 수단이 붙고, 고객사 요구로 기능이 추가되고, 그때마다 처리할 명령이 생긴다.</p>
+<p>이걸 <code>when(cmd)</code> 하나로 받기 시작하면 그 함수는 끝없이 자란다. 그래서 명령별 핸들러를 인터페이스로 두고 레지스트리에 등록하는 구조로 갔다.</p>
+<pre><code class="language-kotlin">interface CommandHandler {
+    fun canHandle(cmd: Byte): Boolean
+    fun handle(packet: Packet)
+}
+
+class CommandHandlerRegistry {
+    private val handlers = mutableListOf&lt;CommandHandler&gt;()
+
+    fun register(handler: CommandHandler) { handlers += handler }
+
+    fun dispatch(packet: Packet) {
+        handlers.firstOrNull { it.canHandle(packet.cmd) }?.handle(packet)
+    }
+}
+</code></pre>
+<p>구조는 이게 전부다. 별로 영리하지 않다. 그런데 이건 지금도 잘한 선택이라고 생각한다. <strong>신규 명령이 들어와도 기존 핸들러를 건드리지 않기 때문이다.</strong> 운영 중인 결제 앱에서 "기존 코드를 안 건드린다"는 건 회귀 위험을 그만큼 안 만든다는 뜻이고, 이 도메인에서 회귀는 곧 매장 장애다.</p>
+<p>포트 단위로 Repository를 나눈 것도 같은 이유로 잘 동작했다. 한 포트에서 수신이 밀려도 다른 포트가 영향을 안 받는다.</p>
+<p>여기까지가 자랑이고, 아래부터가 본론이다.</p>
+<h2>문제 ① 스위치 22개</h2>
+<p>"어떤 화면을 보여줄까"를 이 앱은 boolean 변수로 결정한다. 화면마다 하나씩.</p>
+<pre><code class="language-kotlin">showCreditProcess = true    // ← 켜짐
+showCashCard      = false
+showSignature     = false
+showPinInput      = false
+showCardBalance   = false
+// ... 17개 더
+</code></pre>
+<p>화면을 띄우려면 해당 스위치를 켜고, 닫으려면 끄고, 거래가 끝나면 남은 데이터도 따로 지운다. 그리고 화면 렌더링은 "true인 스위치를 찾아서" 결정한다.</p>
+<p>문제는 이 스위치 관련 코드가 <strong>파일 세 곳에 흩어져 있다</strong>는 거다. 스위치 본체와 on/off는 Repository에, 중계와 데이터 정리는 ViewModel에, if-else 분기는 Composable에.</p>
+<p>그래서 화면 하나를 새로 추가하면 이걸 다 해야 한다.</p>
+<ul>
+<li>스위치 변수 신설</li>
+<li>켜는 코드</li>
+<li>끄는 코드</li>
+<li>거래 데이터 정리</li>
+<li>화면 분기 추가</li>
+</ul>
+<p>이걸 세 파일의 서로 다른 위치에 각각. 세어보니 14곳이었다.</p>
+<p>진짜 문제는 개수가 아니다. <strong>한 곳을 깜빡해도 컴파일이 통과한다</strong>는 것이다. 스위치를 안 끄면 화면이 안 닫히고, 데이터 정리를 빼먹으면 다음 거래에 이전 정보가 남는다. 둘 다 컴파일러가 안 잡아준다. 결국 사람 기억력에 의존한다.</p>
+<p>그리고 스위치가 둘 이상 동시에 true가 되는 조합을 막아주는 장치도 없다. 지금까지 안 터진 건 구조가 안전해서가 아니라 코드를 쓰는 사람이 한 명이었기 때문에 가깝다.</p>
+<h2>그런데 처음엔 이게 문제가 아니었다</h2>
+<p>회고를 적으면서 스스로에게 계속 확인한 게 이거다. <strong>화면이 5~6개일 때는 이 구조가 아무 문제가 없었다.</strong> 스위치 6개면 머리에 다 들어오고, 추가 지점도 몇 곳 안 된다. 그때 sealed class 설계를 먼저 하는 건 오히려 과했을 것이다.</p>
+<p>부채는 처음부터 부채가 아니었다. 화면이 22개가 되는 동안 조금씩 부채가 된 것이다. 이 구분이 중요하다고 생각하는 이유는, 그렇지 않으면 회고가 그냥 자책이 되기 때문이다. 자책에서는 배울 게 없다.</p>
+<p>착수 시점 이야기도 하나 덧붙이면, sealed UiState나 Hilt 같은 건 그때 이 조직에서 표준이 아니었다. 지금은 당연해 보이는 선택지가 당시엔 "새로 검증해야 하는 것"이었다.</p>
+<h2>개선안 — 변수 하나로</h2>
+<p>방향은 명확하다. 스위치 22개를 없애고 <strong>"지금 무슨 화면인가"를 담는 변수 하나</strong>로 바꾼다.</p>
+<pre><code class="language-kotlin">sealed class UiScreen {
+    object Main : UiScreen()
+    data class Credit(val amount: Long) : UiScreen()
+    data class CashCard(val data: CardData) : UiScreen()
+    // 새 화면 = 여기 한 줄
+}
+
+when (val screen = currentScreen) {
+    is UiScreen.Main   -&gt; MainScreen()
+    is UiScreen.Credit -&gt; CreditScreen(screen.amount)
+    // 처리가 빠지면 컴파일 에러
+}
+</code></pre>
+<p>효과는 세 가지다.</p>
+<ul>
+<li>화면 전환이 <strong>대입 한 번</strong>이 된다. 화면 닫기와 거래 데이터 폐기도 <code>currentScreen = Main</code> 하나로 끝난다. 데이터를 따로 지울 필요가 없다. 화면과 데이터가 한 덩어리이기 때문이다.</li>
+<li>두 화면이 동시에 뜨는 상태가 <strong>원천적으로 불가능</strong>해진다. 변수가 하나니까.</li>
+<li>화면 종류를 추가했는데 분기 처리를 빼먹으면 <strong>컴파일 에러</strong>가 난다. 아까 "깜빡해도 컴파일 통과"였던 문제가 기계가 잡아주는 문제로 바뀐다.</li>
+</ul>
+<p>세 번째가 핵심이다. 사람 기억력에 걸어둔 것을 타입 시스템에 옮기는 것.</p>
+<h2>문제 ② DI를 미룬 대가</h2>
+<p>시작할 때 규모가 작아서 DI 프레임워크를 안 넣고 수동 Factory로 갔다. 초기엔 실제로 빨랐다. 이것도 당시엔 합리적이었다고 생각한다.</p>
+<p>대가는 나중에 왔다. 부품을 손으로 조립하다 보니 이런 코드가 생겼다.</p>
+<pre><code class="language-kotlin">viewModel = ViewModelProvider(this, MainViewModel.Factory(application))
+    .get(MainViewModel::class.java)
+
+// &quot;나중에 이 부품도 꽂아줘&quot;
+commandRepository.setDialogViewModel(dialogViewModel)
+</code></pre>
+<p>마지막 줄이 문제다. <strong>이 호출을 깜빡해도 컴파일은 통과하고, 실행 중에야 터진다.</strong> 앞에서 본 스위치 문제와 정확히 같은 형태다. 실수를 기계가 못 잡는다.</p>
+<p>setter로 서로를 주입받다 보니 ViewModel끼리 의존이 생겼고, 누가 누구를 알고 있는지가 코드를 따라가 봐야만 보이게 됐다. 나중에 테스트를 붙이려 했을 때 제일 먼저 걸린 것도 여기였다.</p>
+<p>Hilt였다면 생성자에 선언만 하면 되고, 빠지면 <strong>빌드 시점에</strong> 에러가 난다.</p>
+<pre><code class="language-kotlin">@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val commandRepository: CommandRepository
+)
+</code></pre>
+<p>"규모가 작으니 나중에"는 그럴듯했지만, 결론은 <strong>프로젝트가 작을 때 넣는 게 제일 싸다</strong>는 것이었다. 나중엔 넣을 자리를 찾는 것부터 일이 된다.</p>
+<h2>그래서 지금 코드를 갈아엎을 것인가</h2>
+<p>안 엎는다. 이게 회고에서 제일 중요한 결정이었다.</p>
+<p>화면 22개를 sealed UiState로 전면 전환하는 건 리팩토링 규모가 크다. 그런데 지금 코드는 전국 매장에서 반년 넘게 돌면서 검증된 코드다. <strong>검증된 코드를 구조가 예쁘다는 이유로 건드리는 건 이 도메인에서 손해다.</strong> 장애 하나가 매장 손실로 바로 연결되기 때문이다.</p>
+<p>그래서 이렇게 나눴다.</p>
+<ul>
+<li><strong>스위치 → sealed UiState</strong>: 다음 프로젝트에서 처음부터 적용. 현재 코드는 유지.</li>
+<li><strong>Hilt 도입</strong>: 현재 코드에도 점진 적용 가능. Hilt는 수동 조립 코드와 공존할 수 있어서 클래스 하나씩 옮길 수 있다. 검토 항목 중 가장 독립적이고 안전해서 이건 지금 코드에도 넣을 만하다.</li>
+</ul>
+<p>리팩토링 항목을 "지금 할 것"과 "다음에 할 것"으로 나누는 기준이 결국 <strong>검증 상태를 깨는가</strong>였다.</p>
+<h2>정리</h2>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>이 프로젝트의 선택</th>
+<th>다시 한다면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UI</td>
+<td>Jetpack Compose</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>아키텍처</td>
+<td>MVVM</td>
+<td>유지 + 카테고리별 ViewModel 분리</td>
+</tr>
+<tr>
+<td>동시성</td>
+<td>Coroutine + Flow</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>명령 처리</td>
+<td>Handler + Registry</td>
+<td>그대로</td>
+</tr>
+<tr>
+<td>화면 상태</td>
+<td>boolean 스위치 22개</td>
+<td><strong>sealed UiState 하나</strong></td>
+</tr>
+<tr>
+<td>DI</td>
+<td>수동 Factory</td>
+<td><strong>Hilt</strong></td>
+</tr>
+</tbody>
+</table>
+<p>여섯 중 넷은 지금도 같은 선택을 하겠고, 둘은 확실히 다르게 간다.</p>
+<p>세미나 자료를 만들면서 느낀 건, 잘 굴러가는 코드는 왜 잘 굴러가는지 설명하기가 의외로 어렵다는 것이다. 반면 불편했던 코드는 왜 불편한지가 아주 선명하다. 14곳이라는 숫자도 불편함을 세어보다가 나왔다.</p>
+<p>결제 도메인은 장애가 곧 매장 손실이라 자연히 보수적으로 설계하게 된다. 그런데 보수적인 설계와 낡은 설계는 다르다. 그 경계를 적어두지 않으면 다음 프로젝트에서도 같은 구조를 그대로 복사하게 될 것 같아서, 이렇게 남겨둔다.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://github.com/hyummys" target="_blank" rel="noopener noreferrer">github.com/hyummys</a>
+                &nbsp;&middot;&nbsp;
+                <a href="mailto:ajpuop@naver.com">ajpuop@naver.com</a>
+            </p>
+            <p>&copy; 2026 James Seo</p>
+        </div>
+    </footer>
+</body>
+</html>
