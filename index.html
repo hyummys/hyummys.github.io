@@ -54,7 +54,7 @@
                         <li><strong>Mastercard · VISA</strong> 컨택리스 LV2 인증 자체 획득</li>
                         <li><strong>안드로이드 통합 결제 멀티패드 (CU)</strong> 메인 개발 — 전국 6,000대+ 상용</li>
                         <li><strong>차세대 안드로이드 결제 단말기 (CAT)</strong> 메인 개발 — H&amp;M 매장 도입 완료</li>
-                        <li><strong>다중 VAN 통합 서명패드</strong> 회사 최초 사례 — MLB · 내셔널지오그래픽 매장</li>
+                        <li><strong>3사 통합 서명패드</strong> 회사 최초 사례 — MLB · 내셔널지오그래픽 매장</li>
                         <li><strong>주유소 무선 결제 단말기</strong> (E1 · GS칼텍스) — 일 30만 건+ 거래</li>
                         <li>KT 미디어 플랫폼 개발팀 · <strong>Olleh TV → Genie TV</strong> 안드로이드 셋톱 전환 참여</li>
                     </ul>
@@ -103,7 +103,7 @@
                         </div>
                         <h3>2. 안드로이드 통합 결제 멀티패드 (CU)</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">Android 앱 + Linux 펌웨어 + 현장 CS</span>
+                            <span class="badge">기획 · PM · 메인 개발 (앱 + 펌웨어 + 현장 CS)</span>
                             <span class="period">2025.05 ~ 2025.12 · 출고 중</span>
                         </div>
                         <p class="showcase-card-highlight">
@@ -118,7 +118,7 @@
                             </button>
                             <div class="details-content">
                                 <ul>
-                                    <li>회사 첫 자체 안드로이드 결제 멀티패드 — Android 앱 + Linux 펌웨어 메인 단독 개발 + 현장 CS 직접 대응.</li>
+                                    <li>회사 첫 자체 안드로이드 결제 멀티패드 — 사내 안드로이드 결제 앱 레퍼런스 0에서 앱 + Linux 펌웨어 단독 개발, 현장 CS 직접 대응.</li>
                                     <li>핸들러 레지스트리 패턴으로 운영 중 추가되는 결제 커맨드를 구조 변경 없이 흡수.</li>
                                     <li>시리얼 → BLE 자동 페일오버(비상 결제) 반년간 4건 실 발동.</li>
                                 </ul>
@@ -157,9 +157,9 @@
 
                     <article class="showcase-card">
                         <div class="showcase-card-img">
-                            <img class="diagram" src="img/diagram-multivan.svg" alt="다중 VAN 통합 구조 — POS 시리얼 패킷 헤더 분석으로 VAN을 자동 식별해 NICE·KIS·NPG·통합 전문 로직을 단일 코드베이스에서 매칭">
+                            <img class="diagram" src="img/diagram-multivan.svg" alt="3사 통합 서명패드 구조 — POS 시리얼 패킷 헤더 분석으로 연결된 단말기의 VAN 사양을 자동 식별해 NICE·KIS·NPG·통합 전문 로직을 단일 코드베이스에서 매칭">
                         </div>
-                        <h3>4. Linux 기반 다중 VAN 통합 서명패드</h3>
+                        <h3>4. Linux 기반 3사 통합 서명패드</h3>
                         <div class="showcase-card-meta">
                             <span class="badge">회사 최초 사례</span>
                             <span class="period">2023.05 ~ 2023.10</span>
@@ -217,7 +217,7 @@
                         </div>
                         <h3>6. 주유소 무선 결제 단말기 (E1 · GS칼텍스)</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">설계 · 개발 · 현장 테스트</span>
+                            <span class="badge">설계 · 개발</span>
                             <span class="period">2024.08 ~ 2025.08</span>
                         </div>
                         <p class="showcase-card-highlight">
@@ -233,7 +233,7 @@
                             <div class="details-content">
                                 <ul>
                                     <li>프리셋 → 주유 → 결제 다단계 트랜잭션 + 망상 취소 복구 로직.</li>
-                                    <li>현장 테스트에서 발견된 이벤트 미수신 케이스를 폭넓은 예외 처리로 차단.</li>
+                                    <li>예외 케이스 거래가 잦은 환경 — 구조 변경 없이 즉시 대응 가능한 처리 분기 설계.</li>
                                 </ul>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                             <div class="details-content">
                                 <ul>
                                     <li>Web 뷰 셋톱박스 → AOSP 기반 Android TV 대규모 마이그레이션 중 메인 화면 · 키즈 콘텐츠 담당.</li>
-                                    <li>4GB 메모리 안에서 모든 기능 버벅임 없이 동작하는 KPI 만족.</li>
+                                    <li>4GB 메모리 제약에 맞춘 HW 최적화 — 모든 기능 버벅임 없이 동작.</li>
                                 </ul>
                             </div>
                         </div>
@@ -314,10 +314,9 @@
                     <ul class="about-list">
                         <li><strong>현장 CS 직접 대응</strong> — 전국 6,000대+ CU 단말기 장애를 개발자가 직접 재현 · 분석 · 조치</li>
                         <li><strong>결제 브랜드 인증 대응</strong> — 인증사의 자체 에뮬레이터 보유 요건 충족, 브랜드별 400건+ 케이스 조율</li>
-                        <li><strong>신규 사업 제안</strong> — 3사 합병 후 통합 수요를 보고 다중 VAN 서명패드를 회사 최초 사례로 제안</li>
-                        <li><strong>기획 · PM 역할</strong> — X990 제품 기획과 일정 · 범위 관리를 개발과 함께 수행, 서브 개발자 2명 · 사내 디자이너 1명 협업</li>
-                        <li><strong>하드웨어 팀 협업</strong> — 방폭 · 온도 · 진동 조건의 단말기, 자체 RF 리더 탑재 단말기</li>
-                        <li><strong>현장 테스트 직접 수행</strong> — 전국 주유소에서 사무실에서 안 잡히는 케이스 발굴</li>
+                                                <li><strong>기획 · PM 역할</strong> — X990 · CU 멀티패드의 제품 기획과 일정 · 범위 관리를 개발과 함께 수행, 서브 개발자 2명 · 사내 디자이너 1명 협업</li>
+                        <li><strong>제조사별 HW 최적화</strong> — 제조사 · 기종마다 다른 하드웨어 특성에 맞춰 직접 최적화</li>
+                        <li><strong>현장 테스트 직접 수행</strong> — CU 멀티패드 · X990을 실제 매장 환경에서 실거래 기준으로 검증</li>
                         <li><strong>사내 세미나 강사</strong> (2026, 3회) — 안드로이드 멀티패드 아키텍처 · 설계 구조 등을 사내 개발자 대상으로 공유</li>
                         <li><strong>나이스 데이터사이언스 연구회(나데연) 회장</strong> — AI · 데이터 학습 사내 연구회 운영</li>
                     </ul>
@@ -338,8 +337,6 @@
 
             <section class="showcase-section-cta">
                 <p style="margin: 0; color: var(--text-secondary);">
-                    이력서 · 경력기술서 · STAR 기반 프로젝트 상세는 PDF로 제출본을 별도 전달합니다.
-                    <br>
                     <a href="mailto:ajpuop@naver.com">ajpuop@naver.com</a> · <a href="https://github.com/hyummys" target="_blank" rel="noopener noreferrer">github.com/hyummys</a>
                 </p>
             </section>

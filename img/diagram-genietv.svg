@@ -25,5 +25,5 @@
   <text x="191" y="136" text-anchor="middle" font-size="12.5" fill="#1D1D1F">기가지니2/3 전체 마이그레이션</text>
 
   <rect x="298" y="116" width="176" height="30" rx="7" fill="#ffffff" stroke="#d2d2d7"/>
-  <text x="386" y="136" text-anchor="middle" font-size="12.5" fill="#1D1D1F">4GB 메모리 무버벅임 KPI 만족</text>
+  <text x="386" y="136" text-anchor="middle" font-size="12.5" fill="#1D1D1F">4GB 메모리 제약 HW 최적화</text>
 </svg>
