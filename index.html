@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="James Seo — 매장 기기에서 24시간 멈추지 않는 Android 결제 앱을 만드는 개발자. X990 CAT · CU 멀티패드 프로젝트 쇼케이스.">
+    <meta name="description" content="James Seo — 매장 기기에서 멈추지 않는 Android 결제 앱을 만드는 개발자. CU 멀티패드 · Android 카드 결제 단말기 프로젝트.">
     <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Hilt, Coroutines, Room, 결제 앱, POS, 오프라인 결제, FinTech">
     <meta name="author" content="James">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hyummys.github.io/">
     <meta property="og:title" content="James Seo — Android Developer">
-    <meta property="og:description" content="매장 기기에서 멈추지 않는 Android 결제 앱 — X990 CAT · CU 멀티패드 프로젝트 쇼케이스.">
+    <meta property="og:description" content="매장 기기에서 멈추지 않는 Android 결제 앱 — CU 멀티패드 · Android 카드 결제 단말기 프로젝트.">
 
     <title>James Seo — Android Developer</title>
     <link rel="stylesheet" href="styles.css">
@@ -20,12 +20,13 @@
     <header>
         <div class="container">
             <div class="profile-container">
-                <div class="profile-img">
-                    <img src="profile.png" alt="James Seo Profile">
-                </div>
                 <div class="header-content">
                     <h1>서재현 (James Seo)</h1>
                     <p>Android Developer · 매장 기기에서 멈추지 않는 결제 앱</p>
+                    <a class="github-profile" href="https://github.com/hyummys" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        github.com/hyummys
+                    </a>
                 </div>
             </div>
         </div>
@@ -37,6 +38,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#nice">NICE</a></li>
                 <li><a href="#kt">KT</a></li>
+                <li><a href="#side">Projects</a></li>
                 <li><a href="#writing">Writing</a></li>
                 <li><a href="https://github.com/hyummys" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
@@ -48,221 +50,157 @@
             <section id="about" class="about-section">
                 <h2>About</h2>
                 <div class="about-content">
-                    <p class="about-lead">통신이 끊기거나 기기가 불안정해도 버티는 Android 결제 앱을 만듭니다.</p>
+                    <p class="about-lead">매장 기기에서 멈추지 않는 Android 결제 앱을 만듭니다.</p>
                     <ul class="about-list">
-                        <li>나이스정보통신 디바이스 개발실 · 4년+ — 회사 첫 자체 <strong>Android 결제 앱 2종</strong>을 레퍼런스 0에서 설계 · 출시</li>
-                        <li><strong>CU 통합 결제 멀티패드</strong> — 전국 6,000대+ · 합산 일 100만 건+ 거래, 출시 후 6개월 멈춤 0건</li>
-                        <li><strong>X990 결제 단말기 앱</strong> — 3인 팀 · 기능 32개 · 5개월 만에 출시, H&amp;M 매장 도입</li>
-                        <li><strong>멈추지 않는 설계</strong> — 통신 채널 자동 전환, 중복 승인 차단, POS 시리얼 + BLE 연결의 거래 잠금</li>
-                        <li><strong>배포 · 성능</strong> — 폐쇄망 시리얼 업데이트, APK 용량 −48%, 광고 영상 발열 CPU 60°C+ → 50°C 이하</li>
-                        <li><strong>Mastercard · VISA</strong> 컨택리스 LV2 인증 자체 획득 · Linux 결제 플랫폼 6개 기종 · 50+ 법인 운영</li>
-                        <li>KT 미디어 플랫폼 개발팀 · <strong>Olleh TV → Genie TV</strong> Android 셋톱 전환 참여</li>
+                        <li><strong>나이스정보통신</strong> 디바이스 개발실 (2022.05 ~ 현재) — Android 결제 앱 · 결제 단말기 플랫폼 개발</li>
+                        <li><strong>KT</strong> 미디어 플랫폼 개발팀 (2021.09 ~ 2022.05) — Genie TV 셋톱박스 플랫폼 개발</li>
                     </ul>
                 </div>
             </section>
 
             <section id="nice">
                 <h2>나이스정보통신 · 디바이스 개발실</h2>
-                <p class="showcase-section-meta">2022.05 ~ 현재 · Android 결제 앱 설계 · 개발 + Linux 결제 플랫폼</p>
+                <p class="showcase-section-meta">2022.05 ~ 현재</p>
 
                 <div class="showcase-grid">
-
                     <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img src="img/x990.png" alt="X990 차세대 Android 결제 단말기">
-                        </div>
-                        <h3>1. 차세대 Android 결제 단말기 앱 (CAT · X990)</h3>
+                        <div class="showcase-card-img"><img src="img/bamv1.png" alt="CU 편의점 Android 멀티패드"></div>
+                        <h3>CU 편의점 Android 멀티패드</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">기획 · PM · 개발 리드 (3인 팀)</span>
+                            <span class="badge">PM · 메인 개발</span>
+                            <span class="period">2025.05 ~ 현재</span>
+                        </div>
+                        <p class="showcase-card-highlight">Android 결제 멀티패드 — 전국 CU 매장에서 운영 중</p>
+                        <ul class="showcase-card-roles">
+                            <li><strong>PM</strong> — 고객사 · 자사 영업팀과 일정 · 개발 범위 조율</li>
+                            <li><strong>개발</strong> — 앱 설계 · 개발 · 유지보수 전담</li>
+                        </ul>
+                    </article>
+                    <article class="showcase-card">
+                        <div class="showcase-card-img"><img src="img/x990.png" alt="Android 카드 결제 단말기"></div>
+                        <h3>Android 카드 결제 단말기</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">PM · 개발 리드 (3인 팀)</span>
                             <span class="period">2025.10 ~ 현재</span>
                         </div>
-                        <p class="showcase-card-highlight">
-                            2026.03 정식 출시 · 3인 팀 · 기능 32개 · H&amp;M 매장 도입 (2026.06)
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>Kotlin 2.0</span><span>Jetpack Compose</span><span>Hilt</span><span>Coroutines/Flow</span><span>Room</span><span>AIDL</span><span>JUnit</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>사내 Android 결제 앱 레퍼런스 0에서 초기 구조(UI / ViewModel / Service / Data 계층 · Hilt)를 설계하고, 기능별 로직 · 샘플 소스로 팀원 개발을 리드.</li>
-                                    <li>제조사 AIDL 70여 개(카드 리더 · 프린터 · 바코드)를 서비스 인터페이스 뒤로 감춘 앱 내부 HW SDK 계층.</li>
-                                    <li>H&amp;M POS 연동 — 시리얼 프로토콜 계층과 D1~D9 전문, 부분취소, 셀프 계산대 모드 구현.</li>
-                                    <li>앱 전역 승인 가드로 중복 승인 차단 · BLE GATT 서버 + 시리얼 동시 연결에 거래 잠금.</li>
-                                    <li>망취소 로직 · 매일 자동 업데이트 설계 및 구현 · 단위 테스트 350건 중 255건 직접 작성.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="showcase-card-highlight">외주로 개발되던 카드 결제 단말기를 자체 개발로 전환 — H&amp;M / TRS 매장 도입</p>
+                        <ul class="showcase-card-roles">
+                            <li><strong>PM</strong> — 고객사 · 자사 영업팀과 일정 · 개발 범위 조율</li>
+                            <li><strong>개발 리드</strong> — 초기 구조와 샘플 소스를 만든 뒤 계층별로 팀원 2명에게 분배</li>
+                        </ul>
                     </article>
-
                     <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img src="img/bamv1.png" alt="BGF CU BAM-V1 Android 결제 단말기">
-                        </div>
-                        <h3>2. Android 통합 결제 멀티패드 (CU · BAM-V1)</h3>
+                        <div class="showcase-card-img"><img src="img/npm2000k.png" alt="Linux 결제 단말기"></div>
+                        <h3>Linux 결제 단말기 플랫폼</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">기획 · PM · 메인 개발</span>
-                            <span class="period">2025.05 ~ 2025.12 · 운영 고도화</span>
+                            <span class="badge">개발</span>
+                            <span class="period">2022.05 ~ 현재</span>
                         </div>
-                        <p class="showcase-card-highlight">
-                            전국 6,000대+ · 합산 일 100만 건+ 거래 · 출시 6개월 멈춤 0건
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>Kotlin</span><span>Compose</span><span>Coroutines/Flow</span><span>Media3</span><span>BLE GATT</span><span>NDK/JNI</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>CU 단말기를 Linux에서 Android로 전환한 회사 첫 자체 Android 결제 멀티패드 — 7개월 만에 출시.</li>
-                                    <li>카테고리별 핸들러 레지스트리로 운영 중 추가되는 명령(47종 · 9개 카테고리)을 구조 변경 없이 흡수.</li>
-                                    <li>시리얼 · BLE를 동시에 대기하다 요청이 온 채널로 자동 전환 — BLE 비상 결제 반년간 4건 실제 발동.</li>
-                                    <li>끊김 · 오류가 반복되던 VideoView 재생을 ExoPlayer로 교체하고 오류 재시도 루프 정리, 광고 이미지 GPU 메모리 관리 — CPU 60°C+ → 50°C 이하.</li>
-                                    <li>고정 에셋을 APK에서 분리해 시리얼 업데이트 용량 102.4 → 52.7MiB(−48%), 현장 배포.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="showcase-card-highlight">공용 플랫폼 내 주유소 · 호텔 등 특수 버전 개발</p>
+                        <ul class="showcase-card-roles">
+                            <li>주유소 무선 결제 단말기 (E1 · GS칼텍스 · S-OIL) — 주유소 전용 기능 · 주유기 / POS 연동</li>
+                        </ul>
                     </article>
-
                     <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img class="diagram" src="img/diagram-apiplatform.svg" alt="Linux 결제 단말기 플랫폼 구조 — 공통 결제 로직 단일 소스를 6개 기종에 배포하고 50+ 법인 파생 버전 운영">
-                        </div>
-                        <h3>3. Linux 결제 단말기 플랫폼 · 파생 제품</h3>
+                        <div class="showcase-card-img no-image">Mastercard · VISA</div>
+                        <h3>Mastercard · VISA RF LV2 인증</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">무선 단독 · 유선 협업</span>
-                            <span class="period">2022.05 ~ 현재 · 인수 후 담당</span>
+                            <span class="badge">인증 대응 · 개발</span>
+                            <span class="period">2022 ~ 2023</span>
                         </div>
-                        <p class="showcase-card-highlight">
-                            6개 기종 · 50+ 법인 · 주유소 일 30만 건+ · 3사 통합 서명패드
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>C/C++</span><span>Linux Embedded</span><span>WiFi/LTE</span><span>POS 연동</span><span>망취소</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>흩어진 기종별 소스를 단일 플랫폼으로 통합 — 신규 법인 대응 공수 약 1/3.</li>
-                                    <li>주유소 단말기(GS칼텍스 · E1): 다단계 트랜잭션, 중간 실패 시 망취소 롤백 후 재진행, 무선 끊김 대비 경로.</li>
-                                    <li>3사 통합 서명패드: 시리얼 패킷 헤더로 VAN 자동 식별 — MLB · 내셔널지오그래픽 매장.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="showcase-card-highlight">인증용 카드 에뮬레이터로 두 브랜드 인증 자체 획득</p>
                     </article>
-
-                    <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img class="diagram" src="img/diagram-rflv2.svg" alt="RF LV2 인증 구조 — 자체 개발 카드 에뮬레이터가 ISO 14443 RF로 단말기 RF 리더를 검증하고, 사전 검증 프로그램을 거쳐 Mastercard·VISA LV2 인증 획득">
-                        </div>
-                        <h3>4. Mastercard / VISA RF LV2 컨택리스 인증</h3>
-                        <div class="showcase-card-meta">
-                            <span class="badge">에뮬레이터 자체 개발</span>
-                            <span class="period">2022 ~ 2023 · 브랜드별 8개월</span>
-                        </div>
-                        <p class="showcase-card-highlight">
-                            사내 EMV 노하우 0 → Mastercard · VISA 공식 LV2 인증 자체 획득
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>Python</span><span>PyQt5</span><span>EMV L2</span><span>ISO 14443</span><span>NFC/RF</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>외부 솔루션 부재 — PyQt5 카드 에뮬레이터를 EMV 사양 보고 처음부터 구현.</li>
-                                    <li>사전 검증 프로그램으로 한 번 실패 시 400건+ 재검증 비용을 차단.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-
                 </div>
             </section>
 
             <section id="kt">
-                <h2>KT Corporation · 미디어 플랫폼 개발팀</h2>
-                <p class="showcase-section-meta">2021.09 ~ 2022.05 · Software Developer · 9개월</p>
+                <h2>KT · 미디어 플랫폼 개발팀</h2>
+                <p class="showcase-section-meta">2021.09 ~ 2022.05</p>
 
                 <div class="showcase-grid">
-
                     <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img class="diagram" src="img/diagram-genietv.svg" alt="Genie TV 전환 구조 — Web 뷰 기반 Olleh TV를 Android TV 기반 Genie TV로 전면 전환, 기가지니2/3 전체 마이그레이션">
-                        </div>
-                        <h3>1. 기가지니 Android TV 전환 (Genie TV)</h3>
+                        <div class="showcase-card-img no-image">KT Genie TV</div>
+                        <h3>KT Genie TV 셋톱박스 플랫폼 개발</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">메인 화면 + 키즈 콘텐츠</span>
+                            <span class="badge">메인 화면 · 키즈 콘텐츠</span>
                             <span class="period">2021.09 ~ 2022.05</span>
                         </div>
-                        <p class="showcase-card-highlight">
-                            Olleh TV → Genie TV 셋톱 전환 · 기가지니2/3 전체 디바이스 마이그레이션
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>Android TV</span><span>Kotlin</span><span>MVVM/MVP</span><span>Leanback</span><span>WebSocket</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>전 사용자 진입 화면인 메인 화면과 키즈 콘텐츠 담당.</li>
-                                    <li>화면 성격에 따라 아키텍처 분리 — 계속 갱신되는 메인 화면은 MVVM, 정해진 절차로 흐르는 키즈 · 결제 화면은 MVP.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="showcase-card-highlight">Olleh TV → Genie TV 셋톱박스 전환, 2022 정식 런칭</p>
                     </article>
+                </div>
+            </section>
 
+            <section id="side">
+                <h2>개인 프로젝트</h2>
+                <p class="showcase-section-meta">직접 기획 · 개발해 출시한 서비스</p>
+
+                <div class="showcase-grid">
                     <article class="showcase-card">
-                        <div class="showcase-card-img">
-                            <img class="diagram" src="img/diagram-kidsland.svg" alt="동화 자동 페이지 분할 파이프라인 — FFmpeg·OpenCV 프레임 추출 후 K-means와 DBSCAN으로 페이지 경계 검출, 편당 약 3분 자동 처리">
-                        </div>
-                        <h3>2. 키즈랜드 동화 자동 페이지 분할</h3>
+                        <h3>두꺼비365한의원 홈페이지</h3>
                         <div class="showcase-card-meta">
-                            <span class="badge">자유 과제 · 단독</span>
-                            <span class="period">2021.09 ~ 2022.05</span>
+                            <span class="badge">웹 개발 참여</span>
+                            <span class="period">웹</span>
                         </div>
-                        <p class="showcase-card-highlight">
-                            키즈랜드 50편+ 동화 콘텐츠에 페이지 단위 이동 상용 적용
-                        </p>
-                        <div class="showcase-card-tech">
-                            <span>Python</span><span>FFmpeg</span><span>OpenCV</span>
-                        </div>
-                        <div class="project-details-section">
-                            <button class="details-toggle" aria-expanded="false">
-                                <span class="toggle-arrow">▶</span> 상세 보기
-                            </button>
-                            <div class="details-content">
-                                <ul>
-                                    <li>앞·뒤 10초 이동만 되던 불편을 직접 발견해 과제로 제안.</li>
-                                    <li>성우 발화 클러스터링 + 프레임 유사도로 페이지 경계 검출, 업로드 시 자동 실행.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p class="showcase-card-highlight">포항 두꺼비365한의원 공식 홈페이지 — <a href="https://toad365clinic.com" target="_blank" rel="noopener noreferrer">toad365clinic.com</a></p>
                     </article>
-
+                    <article class="showcase-card">
+                        <h3>맛대맛</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">앱인토스 미니앱</span>
+                        </div>
+                        <p class="showcase-card-highlight">가본 식당을 비교로 줄 세우면, 입맛이 비슷한 사람들이 높게 매긴 식당을 추천</p>
+                    </article>
+                    <article class="showcase-card">
+                        <h3>클럽온 (ClubOn)</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">Android · 웹</span>
+                        </div>
+                        <p class="showcase-card-highlight">스포츠 클럽 운영 앱 — 일정 · 출석 · 회비 · 장부 · 대진 · 경기 기록</p>
+                    </article>
+                    <article class="showcase-card">
+                        <h3>잠온다</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">Android</span>
+                        </div>
+                        <p class="showcase-card-highlight">아기 수면 기록을 바탕으로 다음 낮잠 시간을 알려주는 앱</p>
+                    </article>
+                    <article class="showcase-card">
+                        <h3>모임게임 박스</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">앱인토스 미니앱</span>
+                        </div>
+                        <p class="showcase-card-highlight">휴대폰 한 대로 2~8명이 즐기는 모임 · 벌칙 게임 7종</p>
+                    </article>
+                    <article class="showcase-card">
+                        <h3>회사탈출 RPG</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">앱인토스 미니앱</span>
+                        </div>
+                        <p class="showcase-card-highlight">출근부터 퇴근까지 하루를 기록하면 캐릭터가 성장하는 앱</p>
+                    </article>
+                    <article class="showcase-card">
+                        <h3>오늘도 안부체크</h3>
+                        <div class="showcase-card-meta">
+                            <span class="badge">기획 · 개발</span>
+                            <span class="period">iOS · Android</span>
+                        </div>
+                        <p class="showcase-card-highlight">혼자 사는 사람이 하루 한 번 안부를 남기고, 48시간 미체크 시 연락인에게 알려주는 앱</p>
+                    </article>
                 </div>
             </section>
 
             <section id="support" class="about-section">
-                <h2>협업 · 지식 공유</h2>
+                <h2>사내 활동 · 수상</h2>
                 <div class="about-content">
                     <ul class="about-list">
-                        <li><strong>현장 CS · 현장 테스트 직접 수행</strong> — 전국 CU 단말기 장애를 직접 재현 · 분석 · 조치, 실제 매장에서 실거래 기준 검증</li>
-                        <li><strong>기획 · PM 역할</strong> — X990 · CU 멀티패드의 제품 기획과 일정 · 범위 관리를 개발과 함께 수행, 서브 개발자 2명 · 사내 디자이너 1명 협업</li>
-                        <li><strong>결제 브랜드 인증 대응</strong> — 브랜드별 400건+ 테스트 케이스를 인증 절차에 맞춰 인증사와 조율</li>
-                        <li><strong>사내 세미나 강사</strong> (2026, 3회) — BAM-V1 아키텍처의 장점과 한계, 재설계 방향(sealed UiState · Hilt · 단위 테스트)까지 공유</li>
-                        <li><strong>나이스 데이터사이언스 연구회(나데연) 회장</strong> — AI · 데이터 학습 사내 연구회 운영</li>
+                        <li><strong>사내 세미나 강사</strong> (2026, 3회) — CU 멀티패드 앱의 설계와 한계, 재설계 방향 공유</li>
+                        <li><strong>나이스 데이터사이언스 연구회 회장</strong> — AI · 데이터 사내 연구회 운영, 사내 AI 대회 수상</li>
+                        <li><strong>KT AI 레크리에이션 플랫폼 사내 수상</strong> (2021 ~ 2022)</li>
                     </ul>
                 </div>
             </section>
